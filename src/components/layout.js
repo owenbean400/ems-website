@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { MDXProvider } from "@mdx-js/react";
-import { Link } from "gatsby";
 import SideBar from "./sidebar";
-import { Scrollbars } from "react-custom-scrollbars";
 
 const Layout = ({ children }) => {
-  const [displaySide, setDisplaySide] = useState(window.innerWidth > 768);
-  const [phoneSize, setPhoneSize] = useState(window.innerWidth <= 768);
+  const [displaySide, setDisplaySide] = useState(true);
+  const [phoneSize, setPhoneSize] = useState(false);
 
   useEffect(() => {
     function handleResize() {

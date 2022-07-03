@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 
 // markup
 const IndexPage = () => {
-  const [phoneSize, setPhoneSize] = useState(window.innerWidth <= 768);
+  const [phoneSize, setPhoneSize] = useState(false);
 
   useEffect(() => {
     function handleResize() {

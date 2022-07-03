@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 
 // markup
 const NotFoundPage = () => {
-  const [phoneSize, setPhoneSize] = useState(window.innerWidth <= 768);
+  const [phoneSize, setPhoneSize] = useState(false);
 
   useEffect(() => {
     function handleResize() {
@@ -20,7 +20,7 @@ const NotFoundPage = () => {
 
   return (
     <div>
-      <Navbar></Navbar>
+      <Navbar isPhone={phoneSize}></Navbar>
       <main>
         <title>FRT - Not found</title>
         <p>Page not found</p>
