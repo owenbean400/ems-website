@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/ems-website",
   siteMetadata: {
     siteUrl: `https://www.yourdomain.tld`,
   },
