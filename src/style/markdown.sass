@@ -25,6 +25,23 @@ body
         padding: 0 0 0 16px
         z-index: 999
 
+        a
+            color: white
+            text-decoration: none
+            &:hover
+                text-decoration: underline
+
+        ul
+            display: flex
+            justify-content: center
+            align-items: center
+            padding: 0px
+            margin: 0px 0px 0px 16px
+            list-style-type: none
+
+            li
+                padding: 0px 16px
+
     #hamburger
         position: fixed
         top: 64px
@@ -35,6 +52,7 @@ body
         border-radius: 32px 0px 0px 32px
         padding: 0px 0px 0px 4px
         box-shadow: -8px 3px 10px -3px rgba(0,0,0,0.2)
+        cursor: pointer
 
         #arrow
             margin: 0 8px 0 0
@@ -44,6 +62,9 @@ body
         display: grid
         grid-template-columns: auto auto
         padding: 64px 0 0 0
+
+        p
+            margin: 32px
 
         article
             padding: 16px
@@ -92,6 +113,7 @@ body
             padding: 16px
             transition: width 0.37s
             transition: box-shadow 0.5s
+            overflow-y: auto
 
             ul
                 list-style-type: none
@@ -105,3 +127,35 @@ body
                         text-decoration: none
                         &:hover
                             text-decoration: underline
+
+    footer
+        width: 100vw
+        padding: 16px 32px
+        background-color: $primary-color
+        color: white
+        flex-shrink: 0
+
+        ul
+            list-style-type: none
+            display: grid
+            padding: 0
+            @media screen and (min-width: $breakpoint-tablet)
+                grid-template-columns: auto auto auto
+                justify-content: space-around
+            @media screen and (max-width: $breakpoint-tablet)
+                grid-template-columns: auto
+
+            li
+                @media screen and (min-width: $breakpoint-tablet)
+                    width: 200px
+                    grid-template-columns: auto auto auto
+                    text-align: center
+                    justify-content: space-around
+                @media screen and (max-width: $breakpoint-tablet)
+                    grid-template-columns: auto
+
+                a
+                    text-decoration: none
+                    color: white
+                    &:hover
+                        text-decoration: underline

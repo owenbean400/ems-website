@@ -31,7 +31,10 @@ const SideBar = (props) => {
         }}
       >
         <li>
-          <Link to="/documentation">Home</Link>
+          <Link to="/">Home Webpage</Link>
+        </li>
+        <li>
+          <Link to="/documentation">Documentation</Link>
         </li>
         {data.allFile.nodes.map((value) => (
           <li>

@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
   return (
     <div>
       <nav>
-        <h1>EMS App Documentation</h1>
+        <h1>FRT App Documentation</h1>
       </nav>
       <div
         id="hamburger"
