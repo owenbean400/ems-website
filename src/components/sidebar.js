@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
 
-const SideBar = () => {
+const SideBar = (props) => {
   const data = useStaticQuery(
     graphql`
       query FileSort {
@@ -16,8 +16,20 @@ const SideBar = () => {
   );
 
   return (
-    <aside>
-      <ul>
+    <aside
+      style={{
+        width: props.isShown ? "240px" : "0px",
+        padding: props.isShown ? "16px" : "16px 0px",
+        boxShadow: props.isShown
+          ? "0px 0px 5px 3px rgba(0,0,0,0.33)"
+          : "0px 0px 0px 0px rgba(0,0,0,0.0)",
+      }}
+    >
+      <ul
+        style={{
+          display: props.isShown ? "inline" : "none",
+        }}
+      >
         <li>
           <Link to="/documentation">Home</Link>
         </li>
