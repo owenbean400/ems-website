@@ -5,7 +5,10 @@ const SideBar = (props) => {
   const data = useStaticQuery(
     graphql`
       query FileSort {
-        allFile(sort: { fields: relativeDirectory }) {
+        allFile(
+          sort: { fields: sourceInstanceName }
+          filter: { ext: { eq: ".mdx" } }
+        ) {
           nodes {
             absolutePath
             name
@@ -30,9 +33,6 @@ const SideBar = (props) => {
           display: props.isShown ? "inline" : "none",
         }}
       >
-        <li>
-          <Link to="/">Home Webpage</Link>
-        </li>
         <li>
           <Link to="/documentation">Documentation</Link>
         </li>

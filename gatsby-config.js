@@ -10,6 +10,22 @@ module.exports = {
         defaultLayouts: {
           default: require.resolve("./src/components/Layout.js"),
         },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 240,
+            },
+          },
+        ],
+      },
+    },
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images/doc/`,
       },
     },
     {
