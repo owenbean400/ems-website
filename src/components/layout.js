@@ -81,7 +81,7 @@ const Layout = ({ children }) => {
           />
         </svg>
       </div>
-      <main>
+      <main class="document-main">
         <article>{children}</article>
         <SideBar isShown={displaySide}></SideBar>
       </main>

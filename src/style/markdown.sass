@@ -1,14 +1,18 @@
-$primary-color: #0099FF
-$text-color: #111
 $font-family: 'Source Sans Pro', sans-serif
 $breakpoint-tablet: 768px
 
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap')
 
+:root
+    --primColor: #0099FF
+    --textColor: #111
+    --displayColor: white
+    --bgColor: white
+
 body
-    color: $text-color
+    color: var(--textColor)
     font-family: $font-family
-    background-color: white
+    background-color: var(--bgColor)
     margin: 0
     padding: 0
 
@@ -18,15 +22,15 @@ body
         position: fixed
         top: 0
         left: 0
-        background-color: $primary-color
-        color: white
+        background-color: var(--primColor)
+        color: var(--displayColor)
         display: flex
         align-content: center
         padding: 0 0 0 16px
         z-index: 999
 
         a
-            color: white
+            color: var(--bgColor)
             text-decoration: none
             &:hover
                 text-decoration: underline
@@ -47,7 +51,7 @@ body
         top: 64px
         height: 48px
         width: 80px
-        background-color: white
+        background-color: var(--bgColor)
         transition: right 0.2s
         border-radius: 32px 0px 0px 32px
         padding: 0px 0px 0px 4px
@@ -58,10 +62,49 @@ body
             margin: 0 8px 0 0
             transform: scale()
 
-    main
+    main    
+        padding: 100px 0 0 0
+
+        h1
+            color: var(--primColor)
+            font-weight: bold
+            font-size: 3rem
+            margin: 12px 0 8px 0
+
+        h2
+            color: var(--textColor)
+            margin: 24px 0 8px 0
+
+        h3
+            color: var(--textColor)
+            margin: 24px 0 8px 0
+
+        h4
+            color: var(--textColor)
+            font-weight: bold
+            font-size: 1.25 rem
+            margin: 24px 0 8px 0
+
+        h5
+            color: var(--textColor)
+            margin: 24px 0 8px 0
+
+        h6
+            color: var(--textColor)
+            margin: 24px 0 8px 0
+
+        p
+            color: var(--textColor)
+            margin: 4px 0
+            font-size: 1 rem
+
+        code
+            font-family: $font-family
+            color: var(--primColor)
+
+    .document-main
         display: grid
         grid-template-columns: auto auto
-        padding: 64px 0 0 0
 
         p
             margin: 32px
@@ -70,43 +113,6 @@ body
             padding: 16px
             height: calc(100vh - 96px)
             overflow-y: auto
-
-            h1
-                color: $primary-color
-                font-weight: bold
-                font-size: 3rem
-                margin: 12px 0 8px 0
-
-            h2
-                color: $text-color
-                margin: 24px 0 8px 0
-
-            h3
-                color: $text-color
-                margin: 24px 0 8px 0
-
-            h4
-                color: $text-color
-                font-weight: bold
-                font-size: 1.25 rem
-                margin: 24px 0 8px 0
-
-            h5
-                color: $text-color
-                margin: 24px 0 8px 0
-
-            h6
-                color: $text-color
-                margin: 24px 0 8px 0
-
-            p
-                color: $text-color
-                margin: 4px 0
-                font-size: 1 rem
-
-            code
-                font-family: $font-family
-                color: $primary-color
 
         aside
             height: calc(100vh - 96px)
@@ -123,7 +129,7 @@ body
                     margin: 4px 0
 
                     a
-                        color: $primary-color
+                        color: var(--primColor)
                         text-decoration: none
                         &:hover
                             text-decoration: underline
@@ -135,8 +141,8 @@ body
     footer
         width: 100vw
         padding: 16px 32px
-        background-color: $primary-color
-        color: white
+        background-color: var(--primColor)
+        color: var(--bgColor)
         flex-shrink: 0
 
         ul
@@ -160,6 +166,6 @@ body
 
                 a
                     text-decoration: none
-                    color: white
+                    color: var(--displayColor)
                     &:hover
                         text-decoration: underline
