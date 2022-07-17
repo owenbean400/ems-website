@@ -36,5 +36,18 @@ module.exports = {
       },
     },
     `gatsby-plugin-sass`,
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Response Time Track`,
+        short_name: `Repsonse Time Track`,
+        start_url: `/`,
+        background_color: `#eeeeee`,
+        theme_color: `#0099FF`,
+        display: `standalone`,
+        icon: `src/images/ems_tracker_logo_web.png`,
+      },
+    },
   ],
 };

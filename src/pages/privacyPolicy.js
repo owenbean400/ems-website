@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import MetaData from "../components/Metadata";
 import "../style/markdown.sass";
 
 // markup
@@ -22,6 +23,7 @@ const IndexPage = () => {
   return (
     <div id="main">
       <Navbar isPhone={phoneSize}></Navbar>
+      <MetaData title="Response Time Track - Private Policy" />
       <main>
         <h1>Privacy Policy</h1>
         <p>
