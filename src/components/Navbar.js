@@ -33,7 +33,7 @@ const Navbar = (props) => {
   return (
     <nav>
       <h1>
-        <Link to="/">{props.isPhone ? "FRT" : "First Responder Time"} App</Link>
+        <Link to="/">{props.isPhone ? "RRT" : "Response Time Track"} App</Link>
       </h1>
       <ul>
         <li>

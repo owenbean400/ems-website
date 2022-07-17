@@ -24,13 +24,13 @@ const IndexPage = () => {
       <Navbar isPhone={phoneSize}></Navbar>
       <main>
         <p>
-          The EMS App's goal is to allow paramedics to focus more on the rescue
-          and less time on keeping track of reports. Consequently, this goal
-          will increase the convenience of tracking times for a report. The App
-          idea was born after the frustration from an EMS chief. Maine state
-          regulations has paramedics facilities keep track of each rescue.
-          Keeping track with paper and pen is a hassle, error-prone, and
-          unreliable. That is why this app was developed.
+          The Response Time Track App's goal is to allow paramedics to focus
+          more on the rescue and less time on keeping track of reports.
+          Consequently, this goal will increase the convenience of tracking
+          times for a report. The App idea was born after the frustration from
+          an EMS chief. Maine state regulations has paramedics facilities keep
+          track of each rescue. Keeping track with paper and pen is a hassle,
+          error-prone, and unreliable. That is why this app was developed.
         </p>
       </main>
       <Footer></Footer>
