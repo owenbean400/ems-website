@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import SideBar from "./sidebar";
+import MetaData from "./Metadata";
 import "../style/markdown.sass";
 
 const Layout = ({ children }) => {
@@ -48,8 +49,9 @@ const Layout = ({ children }) => {
 
   return (
     <div>
+      <MetaData title="Response Time Track - Documentation" />
       <nav>
-        <h1>RRT Documentation</h1>
+        <h1>RTT Documentation</h1>
       </nav>
       <div
         id="hamburger"

@@ -8,6 +8,10 @@ const Footer = () => {
       name: "Home",
     },
     {
+      link: "/download",
+      name: "Download",
+    },
+    {
       link: "/documentation",
       name: "Documentation",
     },

@@ -1,0 +1,14 @@
+$breakpoint-tablet: 768px
+
+.download-grid
+    display: grid
+    @media screen and (min-width: $breakpoint-tablet)
+        grid-template-columns: calc(50% - 24px) calc(50% - 24px)
+        grid-gap: 48px
+    @media screen and (max-width: $breakpoint-tablet)
+        grid-template-columns: auto
+
+    img
+        max-width: 540px
+        width: 100%
+        border-radius: 16px

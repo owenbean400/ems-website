@@ -33,9 +33,12 @@ const Navbar = (props) => {
   return (
     <nav>
       <h1>
-        <Link to="/">{props.isPhone ? "RRT" : "Response Time Track"} App</Link>
+        <Link to="/">{props.isPhone ? "RTT" : "Response Time Track"} App</Link>
       </h1>
       <ul>
+        <li>
+          <Link to="/download">Download</Link>
+        </li>
         <li>
           <Link to="/documentation">Docs</Link>
         </li>
