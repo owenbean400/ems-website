@@ -17,6 +17,32 @@ const Layout = ({ children }) => {
 
     handleResize();
 
+    // Documentation colors
+    function isDarkModeEnabled() {
+      if (
+        typeof window !== "undefined" &&
+        typeof window.matchMedia !== "undefined"
+      ) {
+        const mediaQueryString = "(prefers-color-scheme: dark)";
+
+        return window.matchMedia(mediaQueryString).matches;
+      } else {
+        return false;
+      }
+    }
+
+    if (isDarkModeEnabled()) {
+      document.documentElement.style.setProperty("--primColor", "#0784b5");
+      document.documentElement.style.setProperty("--textColor", "#c9c9c9");
+      document.documentElement.style.setProperty("--displayColor", "#eee");
+      document.documentElement.style.setProperty("--bgColor", "#050505");
+    } else {
+      document.documentElement.style.setProperty("--primColor", "#0099FF");
+      document.documentElement.style.setProperty("--textColor", "#111");
+      document.documentElement.style.setProperty("--displayColor", "white");
+      document.documentElement.style.setProperty("--bgColor", "white");
+    }
+
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 

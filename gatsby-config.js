@@ -1,7 +1,7 @@
 module.exports = {
-  pathPrefix: "/ems-website",
+  pathPrefix: "",
   siteMetadata: {
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://responsetimetrack.app/`,
   },
   plugins: [
     {
