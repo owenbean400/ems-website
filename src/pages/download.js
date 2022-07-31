@@ -33,7 +33,7 @@ const DownloadPage = () => {
             <h2>iOS</h2>
             <a
               target="_blank"
-              href="https://play.google.com/store/apps/details?id=com.owenbean.ems"
+              href="https://apps.apple.com/us/app/response-time-track/id1629269991"
             >
               <img src={AppleDownloadImage} alt="Apple Download Image" />
             </a>
@@ -42,13 +42,13 @@ const DownloadPage = () => {
             <h2>Android</h2>
             <a
               target="_blank"
-              href="https://apps.apple.com/us/app/response-time-track/id1629269991"
+              href="https://play.google.com/store/apps/details?id=com.owenbean.ems"
             >
               <img src={AndroidDownloadImage} alt="Android Download Image" />
             </a>
           </div>
         </div>
-        <p>*This app cost $9.99 to download</p>
+        <p>*This app cost $0.99 to download</p>
       </main>
       <Footer></Footer>
     </div>

@@ -16,6 +16,25 @@ body
     margin: 0
     padding: 0
 
+    #header-photo
+        width: calc(100% - 12px)
+        background-image: url("../images/doc/webBannerPhone.jpg")
+        background-color: #0099FF
+        background-repeat: no-repeat
+        background-size: contain
+        background-position: right
+        margin-top: 64px
+        padding: 24px 0 0 12px
+        @media screen and (min-width: $breakpoint-tablet)
+            height: 400px
+        @media screen and (max-width: $breakpoint-tablet)
+            height: 180px
+
+        h2
+            color: var(--displayColor)
+            font-size: 48px
+            margin: 0
+
     #main
         position: relative
         min-height: 100vh
