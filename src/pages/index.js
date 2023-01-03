@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "gatsby";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import MetaData from "../components/Metadata";
 import "../style/markdown.sass";
+import AndroidDownloadImage from "../images/download/download_android.png";
+import AppleDownloadImage from "../images/download/download_apple.png";
+import "../style/download.sass";
 
 // markup
 const IndexPage = () => {
@@ -25,22 +29,36 @@ const IndexPage = () => {
       <MetaData title="Response Time Track" />
       <Navbar isPhone={phoneSize}></Navbar>
       <div id="header-photo">
-        <h2>Recording</h2>
-        <h2>Rescues</h2>
       </div>
       <main>
         <p>
-          The Response Time Track App's goal is to allow paramedics to focus
-          more on the rescue and less time on keeping track of reports. It keeps
-          tracks of the times of receiving calls, going on enroute, on scene,
-          transport, and destination. This data is saved for any desired use of
-          the data.The app will keep track of each rescue, specifically tracking
-          the time of call, enroute, scene, transport, and destination. Each
-          change in action of the rescue will only need a push of a button. At
-          the end of the trip, the mileage can be recorded for reporting. These
-          rescue records is saved on the phone, which can be saved as csv file,
-          written down, or sent to a server.
+          The goal of the Response Time Track App is to enable paramedics to dedicate more time to rescuing and less time to report keeping. It records the time of receiving calls, enroute, on scene, transport, and destination, and this data can be saved for any desired use. The app keeps track of each rescue, recording the time of call, enroute, scene, transport, and destination with a single button press. At the end of the trip, mileage can be recorded for reporting. These rescue records are saved on the phone, and can be exported as a CSV file, written down, or sent to a server.
         </p>
+        <h2>Download</h2>
+        <div className="download-grid">
+          <div>
+            <h3>iOS</h3>
+            <a
+              target="_blank"
+              href="https://apps.apple.com/us/app/response-time-track/id1629269991"
+            >
+              <img src={AppleDownloadImage} alt="Apple Download Image" />
+            </a>
+          </div>
+          <div>
+            <h3>Android</h3>
+            <a
+              target="_blank"
+              href="https://play.google.com/store/apps/details?id=com.owenbean.ems"
+            >
+              <img src={AndroidDownloadImage} alt="Android Download Image" />
+            </a>
+          </div>
+        </div>
+        <p>*This app cost $0.99 to download</p>
+        <h2>Documentation</h2>
+        <p>Documentation has been composed to assist users in comprehending the functioning of the mobile application. The documentation has been divided into the various screens. Each screen will elucidate the purpose of every button and text. Please click the button below to be directed to the documentation webpage.</p>
+        <Link to="/documentation"><button>Documentation</button></Link>
       </main>
       <Footer></Footer>
     </div>

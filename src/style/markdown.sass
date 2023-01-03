@@ -17,27 +17,37 @@ body
     padding: 0
 
     #header-photo
-        width: calc(100% - 12px)
+        width: calc(100% - 20px)
         background-image: url("../images/doc/webBannerPhone.jpg")
-        background-color: #0099FF
+        background-color: var(--bgColor)
         background-repeat: no-repeat
         background-size: contain
-        background-position: right
-        margin-top: 64px
-        padding: 24px 0 0 12px
+        background-position: center
+        margin: 80px 4px 0 4px
+        padding: 48px 0 0 12px
         @media screen and (min-width: $breakpoint-tablet)
-            height: 400px
+            height: 620px
+            background-image: url("../images/desktop.png")
         @media screen and (max-width: $breakpoint-tablet)
-            height: 180px
+            height: 300px
+            background-image: url("../images/mobile.png")
 
-        h2
-            color: var(--displayColor)
-            font-size: 48px
-            margin: 0
+    h2
+        color: var(--displayColor)
+        margin: 64px 0
 
     #main
         position: relative
         min-height: 100vh
+
+        button
+            background-color: var(--primColor)
+            color: var(--displayColor)
+            height: 64px
+            width: 192px
+            border: none
+            margin: 16px auto
+            cursor: pointer
 
     nav
         width: calc(100vw - 16px)
@@ -99,7 +109,11 @@ body
 
         h2
             color: var(--textColor)
-            margin: 24px 0 8px 0
+            margin: 64px 0 8px 0
+            @media screen and (min-width: $breakpoint-tablet)
+                font-size: 48px
+            @media screen and (max-width: $breakpoint-tablet)
+                font-size: 24px
 
         h3
             color: var(--textColor)
