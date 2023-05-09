@@ -16,6 +16,10 @@ const Footer = () => {
       name: "Documentation",
     },
     {
+      link: "/releases",
+      name: "Releases",
+    },
+    {
       link: "/privacyPolicy",
       name: "Privacy Policy",
     },

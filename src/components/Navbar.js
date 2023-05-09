@@ -42,6 +42,9 @@ const Navbar = (props) => {
         <li>
           <Link to="/documentation">Docs</Link>
         </li>
+        <li>
+          <Link to="/releases">Releases</Link>
+        </li>
       </ul>
     </nav>
   );
