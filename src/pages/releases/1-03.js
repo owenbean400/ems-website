@@ -6,7 +6,7 @@ import MetaData from "../../components/Metadata";
 import "../../style/markdown.sass";
 import "../../style/download.sass";
 
-const R1_01 = () => {
+const R1_03 = () => {
   const [phoneSize, setPhoneSize] = useState(false);
 
   useEffect(() => {
@@ -24,28 +24,29 @@ const R1_01 = () => {
   return (
     <div id="main">
       <Navbar isPhone={phoneSize}></Navbar>
-      <MetaData title="Response Time Track - 1.01 Release" />
+      <MetaData title="Response Time Track - 1.03 Release" />
       <main>
-        <h1>1.01 Release Notes</h1>
+        <h1>1.03 Release Notes</h1>
         <p>
-          Updated release allows you to obtain different ways of time tracked
-          records. The layout of record information expanded to two layouts;
-          card layout and grid layout. Allow option to download csv file of
-          times tracked onto phone.
+          Updated history page to contain date filters for rescue times that
+          will allow easier finding of older records. Furthermore, a duration
+          days setting has been added to the setting screen to set default days
+          filtering.
         </p>
         <h3>Changes</h3>
         <ul>
-          <li>Two layouts to display time records history</li>
+          <li>History tab UI Rework</li>
           <ul>
-            <li>Card layout</li>
-            <li>Grid layout</li>
+            <li>Removed bottom right blue button.</li>
+            <li>Added icons on top right screen.</li>
+            <li>Date filtered on top left screen.</li>
           </ul>
-          <li>Added ability to download time records in csv file on phone</li>
+          <li>Added duration days to setting tab</li>
         </ul>
         <h3>Future Plans</h3>
         <p>
-          Next release will include an update with Firebase integration and
-          track traveled mileage distance during rescue.
+          Next release will be a jump release to add account authentication and
+          cloud storage.
         </p>
         <p>
           <Link to="/releases">
@@ -58,4 +59,4 @@ const R1_01 = () => {
   );
 };
 
-export default R1_01;
+export default R1_03;

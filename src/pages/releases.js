@@ -24,10 +24,20 @@ const R1_01 = () => {
   return (
     <div id="main">
       <Navbar isPhone={phoneSize}></Navbar>
-      <MetaData title="Response Time Track - 1.02 Release" />
+      <MetaData title="Response Time Track - Releases" />
       <main>
         <h1>Release Notes</h1>
         <ul>
+          <li>
+            <Link to="/releases/1-1">
+              <p className="release-goto">1.1</p>
+            </Link>
+          </li>
+          <li>
+            <Link to="/releases/1-03">
+              <p className="release-goto">1.03</p>
+            </Link>
+          </li>
           <li>
             <Link to="/releases/1-02">
               <p className="release-goto">1.02</p>

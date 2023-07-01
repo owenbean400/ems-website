@@ -6,7 +6,7 @@ import MetaData from "../../components/Metadata";
 import "../../style/markdown.sass";
 import "../../style/download.sass";
 
-const R1_01 = () => {
+const R1_1 = () => {
   const [phoneSize, setPhoneSize] = useState(false);
 
   useEffect(() => {
@@ -24,29 +24,28 @@ const R1_01 = () => {
   return (
     <div id="main">
       <Navbar isPhone={phoneSize}></Navbar>
-      <MetaData title="Response Time Track - 1.01 Release" />
+      <MetaData title="Response Time Track - 1.1 Release" />
       <main>
-        <h1>1.01 Release Notes</h1>
+        <h1>1.1 Release Notes</h1>
         <p>
-          Updated release allows you to obtain different ways of time tracked
-          records. The layout of record information expanded to two layouts;
-          card layout and grid layout. Allow option to download csv file of
-          times tracked onto phone.
+          Added account authentication through Firebase that includes signin
+          with Apple or Google. The Apple and Google account will be linked with
+          the same email. Account deleting is allowed within the settings tab.
+          The account will be for later release of cloud storage of rescue
+          times.
         </p>
         <h3>Changes</h3>
         <ul>
-          <li>Two layouts to display time records history</li>
+          <li>Login UI Rework</li>
           <ul>
-            <li>Card layout</li>
-            <li>Grid layout</li>
+            <li>Added login with Apple</li>
+            <li>Added login with Google</li>
+            <li>Added continue as guest</li>
           </ul>
-          <li>Added ability to download time records in csv file on phone</li>
+          <li>Settings has option to delete account</li>
         </ul>
         <h3>Future Plans</h3>
-        <p>
-          Next release will include an update with Firebase integration and
-          track traveled mileage distance during rescue.
-        </p>
+        <p>Next release will include cloud storage of rescue times.</p>
         <p>
           <Link to="/releases">
             <p className="release-link">Back to releases</p>
@@ -58,4 +57,4 @@ const R1_01 = () => {
   );
 };
 
-export default R1_01;
+export default R1_1;

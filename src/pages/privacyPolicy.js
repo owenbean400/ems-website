@@ -38,32 +38,28 @@ const IndexPage = () => {
           login, the data can be sent to the server, which is under the user
           mode.
         </p>
-        <h3>User Mode</h3>
-        <p>
-          In user mode, the account must be set up by the organization. Users
-          can not create their own account.
+        <h3>Third Party Login</h3>
+        <p className="doc-txt">
+          The app uses Firebase authentication for users who sign up with Google
+          or Apple. The account is for cloud stoage for those who pay for it.
+          Accounts can be deleted by going to the setting page of the app.
         </p>
         <h5>Data Collected</h5>
         <p className="doc-txt">
-          The data we collect are for account setup and timed records. For an
-          indiviual account, we only grab username use and name. For an
-          organization, only the name of the organization is collected for
-          keeping identification. The other data collected are time records. The
-          time records are for first responders going out for a rescue. These
-          times are for call, enroute, scene, transport, and destination.
-          Lastly, the mileage is travelled that has been entered will be
-          collected.
+          Firebase analytics collects users clicks throughout the app. The
+          clicks are not identifiable with any user. Firebase crashlytics is
+          used to detect crashes from the app. Email can be shared with account
+          login to help sync the user.
         </p>
         <h5>Information Is For</h5>
         <p className="doc-txt">
-          The information is for the organization to report to the state. Also,
-          the organization can do whatever they want with their own information.
+          The information rescue times is used for first responders to identify
+          and analysis rescue times.
         </p>
         <h5>Information Sharing</h5>
         <p className="doc-txt">
-          The information collected is only shared to the organization behind
-          the accounts. There are no other third parties that will collect data
-          from Response Time Track app.
+          The information from accounts is shared with Firebase database and
+          will only be access by the user.
         </p>
       </main>
       <Footer></Footer>
