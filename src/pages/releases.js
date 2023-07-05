@@ -30,7 +30,7 @@ const R1_01 = () => {
         <ul>
           <li>
             <Link to="/releases/1-1-1">
-              <p className="release-goto">1.1</p>
+              <p className="release-goto">1.1.1</p>
             </Link>
           </li>
           <li>
