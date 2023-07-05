@@ -24,7 +24,7 @@ const R1_1_1 = () => {
   return (
     <div id="main">
       <Navbar isPhone={phoneSize}></Navbar>
-      <MetaData title="Response Time Track - 1.1 Release" />
+      <MetaData title="Response Time Track - 1.1.1 Release" />
       <main>
         <h1>1.1.1 Release Notes</h1>
         <p>
@@ -41,7 +41,6 @@ const R1_1_1 = () => {
               settings
             </li>
           </ul>
-          <li>Settings has option to delete account</li>
         </ul>
         <h3>Future Plans</h3>
         <p>Next release will include cloud storage of rescue times.</p>
