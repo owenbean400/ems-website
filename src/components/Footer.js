@@ -23,6 +23,10 @@ const Footer = () => {
       link: "/privacyPolicy",
       name: "Privacy Policy",
     },
+    {
+      link: "/elua",
+      name: "End User License Agreement",
+    },
   ];
 
   return (
