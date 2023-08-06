@@ -28,19 +28,28 @@ const R1_1_2 = () => {
       <main>
         <h1>1.1.2 Release Notes</h1>
         <p>
-          Response Time Track app will be opening the app free for users with advertisements. There is a premium option to ignore ads and allow for location GPS to calculate mileage done during rescue.
+          Response Time Track app will be opening the app free for users with
+          advertisements. There is a premium option to ignore ads and allow for
+          location GPS to calculate mileage done during rescue.
         </p>
         <h3>Changes</h3>
         <ul>
           <li>Free application with ads and no location tracking.</li>
-          <li>Premium version of app is subscription based of $1.99 a month.</li>
+          <li>
+            Premium version of app is subscription based of $4.99 a month.
+          </li>
           <ul>
+            <li>Cloud storage of times with daily backups</li>
             <li>Location GPS stream to calculate mileage</li>
             <li>No ads</li>
           </ul>
         </ul>
         <h3>Future Plans</h3>
-        <p>Next release will include cloud storage of rescue times. The free app with ads or monthly subscription will help pay for storage of backend server for backups of rescue times.</p>
+        <p>
+          Next release will include cloud storage of rescue times. The free app
+          with ads or monthly subscription will help pay for storage of backend
+          server for backups of rescue times.
+        </p>
         <p>
           <Link to="/releases">
             <p className="release-link">Back to releases</p>
