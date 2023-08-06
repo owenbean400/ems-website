@@ -28,11 +28,18 @@ const IndexPage = () => {
     <div id="main">
       <MetaData title="Response Time Track" />
       <Navbar isPhone={phoneSize}></Navbar>
-      <div id="header-photo">
-      </div>
+      <div id="header-photo"></div>
       <main>
         <p>
-          The goal of the Response Time Track App is to enable paramedics to dedicate more time to rescuing and less time to report keeping. It records the time of receiving calls, enroute, on scene, transport, and destination, and this data can be saved for any desired use. The app keeps track of each rescue, recording the time of call, enroute, scene, transport, and destination with a single button press. At the end of the trip, mileage can be recorded for reporting. These rescue records are saved on the phone, and can be exported as a CSV file, written down, or sent to a server.
+          The goal of the Response Time Track App is to enable paramedics to
+          dedicate more time to rescuing and less time to report keeping. It
+          records the time of receiving calls, enroute, on scene, transport, and
+          destination, and this data can be saved for any desired use. The app
+          keeps track of each rescue, recording the time of call, enroute,
+          scene, transport, and destination with a single button press. At the
+          end of the trip, mileage can be recorded for reporting. These rescue
+          records are saved on the phone, and can be exported as a CSV file,
+          written down, or sent to a server.
         </p>
         <h2>Download</h2>
         <div className="download-grid">
@@ -55,10 +62,17 @@ const IndexPage = () => {
             </a>
           </div>
         </div>
-        <p>*This app cost $0.99 to download</p>
         <h2>Documentation</h2>
-        <p>Documentation has been composed to assist users in comprehending the functioning of the mobile application. The documentation has been divided into the various screens. Each screen will elucidate the purpose of every button and text. Please click the button below to be directed to the documentation webpage.</p>
-        <Link to="/documentation"><button>Documentation</button></Link>
+        <p>
+          Documentation has been composed to assist users in comprehending the
+          functioning of the mobile application. The documentation has been
+          divided into the various screens. Each screen will elucidate the
+          purpose of every button and text. Please click the button below to be
+          directed to the documentation webpage.
+        </p>
+        <Link to="/documentation">
+          <button>Documentation</button>
+        </Link>
       </main>
       <Footer></Footer>
     </div>

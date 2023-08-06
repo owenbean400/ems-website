@@ -48,7 +48,6 @@ const DownloadPage = () => {
             </a>
           </div>
         </div>
-        <p>*This app cost $0.99 to download</p>
       </main>
       <Footer></Footer>
     </div>
