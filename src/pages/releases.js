@@ -29,6 +29,16 @@ const R1_01 = () => {
         <h1>Release Notes</h1>
         <ul>
           <li>
+            <Link to="/releases/1-1-5">
+              <p className="release-goto">1.1.5</p>
+            </Link>
+          </li>
+          <li>
+            <Link to="/releases/1-1-4">
+              <p className="release-goto">1.1.4</p>
+            </Link>
+          </li>
+          <li>
             <Link to="/releases/1-1-2">
               <p className="release-goto">1.1.2</p>
             </Link>
