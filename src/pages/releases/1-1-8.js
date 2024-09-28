@@ -6,7 +6,7 @@ import MetaData from "../../components/Metadata";
 import "../../style/markdown.sass";
 import "../../style/download.sass";
 
-const R1_1_4 = () => {
+const R1_1_8 = () => {
   const [phoneSize, setPhoneSize] = useState(false);
 
   useEffect(() => {
@@ -24,15 +24,25 @@ const R1_1_4 = () => {
   return (
     <div id="main">
       <Navbar isPhone={phoneSize}></Navbar>
-      <MetaData title="Response Time Track - 1.1.4 Release" />
+      <MetaData title="Response Time Track - 1.1.8 Release" />
       <main>
-        <h1>1.1.4 Release Notes</h1>
+        <h1>1.1.8 Release Notes</h1>
         <p>
-          Quick bug fix for guest login.
+          Added email account ownership for the future of a website application for viewing rescues with paid subscription version.
         </p>
         <h3>Changes</h3>
         <ul>
-          <li>Fixed guest login loading status for no subscription purchase</li>
+          <li>Login Screen</li>
+          <ul>
+            <li>Add Email and Password Login</li>
+            <li>Add sign up with email and password with email verification</li>
+            <li>Add forgot password</li>
+          </ul>
+          <li>Offline Mode</li>
+            <ul>
+                <li>Renamed Guest mode to Offline mode</li>
+                <li>Application will automatically go to offline mode when leaving the app on offline mode. No more login screen pop up everytime</li>
+            </ul>
         </ul>
         <p>
           <Link to="/releases">
@@ -45,4 +55,4 @@ const R1_1_4 = () => {
   );
 };
 
-export default R1_1_4;
+export default R1_1_8;
