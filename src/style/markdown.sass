@@ -59,8 +59,12 @@ body
         color: var(--displayColor)
         display: flex
         align-content: center
-        padding: 0 0 0 16px
+        justify-content: space-between
+        padding: 0 0 0 0
         z-index: 999
+
+        h1
+            margin: auto 16px auto 16px
 
         a
             color: var(--displayColor)
@@ -70,15 +74,74 @@ body
 
         ul
             display: flex
-            justify-content: center
             align-items: center
+            justify-content: space-between
             padding: 0px
-            margin: 0px 0px 0px 16px
+            margin: 0px 16px 0px 0px
             list-style-type: none
+
+        .hamburger-container
+            width: 32px
+            height: 24px
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+
+            .hamburger-bar
+                width: 32px
+                height: 4px
+                background-color: var(--displayColor)
+
+        .side-menu
+            width: 300px
+            position: absolute
+            height: 100vh
+            background-color: var(--primColor)
+            top: 0
+            transition: right 0.5s
+
+            li
+                text-align: left
+
+            .side-menu-header
+                display: flex
+                justify-content: space-between
+                align-items: center
+                height: 64px
+
+                img
+                    height: 40px
+                    width: 40px
+                    margin: 0 0 0 8px
+
+                .close-x-container
+                    height: 48px
+                    width: 48px
+                    position: relative
+
+                    .x-line
+                        position: absolute
+                        width: 60%
+                        height: 4px
+                        background-color: var(--displayColor)
+                        top: 50%
+                        left: 0
+                        transform-origin: center
+
+                        &:first-child
+                            transform: translateY(-50%) rotate(45deg)
+                        &:last-child
+                            transform: translateY(-50%) rotate(-45deg)
+
+            ul
+                display: block
+
+                li
+                    text-align: left
+
 
             li
                 padding: 8px 16px 0px 16px
-
     #hamburger
         position: fixed
         top: 64px
