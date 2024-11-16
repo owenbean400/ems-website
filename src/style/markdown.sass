@@ -48,7 +48,7 @@ body
         z-index: 999
 
         h1
-            margin: auto 16px auto 16px
+            margin: auto 32px auto 32px
 
         a
             color: var(--displayColor)
@@ -61,7 +61,7 @@ body
             align-items: center
             justify-content: space-between
             padding: 0px
-            margin: 0px 16px 0px 0px
+            margin: 0px 32px 0px 0px
             list-style-type: none
 
         .hamburger-container
@@ -403,3 +403,55 @@ body
                 &:focus
                         outline: none
                         border: none
+
+    .prices-page
+        overflow-x: hidden
+
+        h1
+            color: var(--textColor)
+
+        .prices-container
+            display: grid
+            margin: 16px 0 64px 0
+
+            @media screen and (min-width: $breakpoint-tablet)
+                grid-template-columns: 290px 290px
+                justify-content: space-around
+            @media screen and (max-width: $breakpoint-tablet)
+                grid-template-columns: 290px
+                justify-content: center
+
+            .price-container
+                &:first-child
+                    border: solid 2px white
+                    width: 290px
+                    margin-bottom: 32px
+                    @media screen and (max-width: $breakpoint-tablet)
+                        height: 354px
+                    @media screen and (min-width: $breakpoint-tablet)
+                        height: 384px
+                &:last-child
+                    border: solid 8px var(--primColor)
+                    width: 290px
+                    margin-left: -6px
+                    @media screen and (max-width: $breakpoint-tablet)
+                        height: 294px
+                    @media screen and (min-width: $breakpoint-tablet)
+                        height: 324px
+
+                h2
+                    margin: 16px 16px 0 16px
+
+                .price-info
+                    margin: 0 16px
+                    font-size: 16px
+
+                .price-tag
+                    margin: 0 16px
+
+                    .price-money
+                        font-size: 64px
+
+                .feature-list
+                    background-color: var(--secondColor)
+                    padding: 16px 48px
