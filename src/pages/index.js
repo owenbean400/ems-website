@@ -7,6 +7,11 @@ import "../style/markdown.sass";
 import AndroidDownloadImage from "../images/download/download_android.png";
 import AppleDownloadImage from "../images/download/download_apple.png";
 import "../style/download.sass";
+import CallImg from "../images/screenshot/call.png"
+import EnrouteImg from "../images/screenshot/enroute.png"
+import SceneImg from "../images/screenshot/scene.png"
+import TransportImg from "../images/screenshot/transport.png"
+import DestinationImg from "../images/screenshot/destination.png"
 
 // markup
 const IndexPage = () => {
@@ -28,52 +33,49 @@ const IndexPage = () => {
     <div id="main">
       <MetaData title="Response Time Track" />
       <Navbar isPhone={phoneSize}></Navbar>
-      <div id="header-photo"></div>
-      <main>
-        <p>
-          The goal of the Response Time Track App is to enable paramedics to
-          dedicate more time to rescuing and less time to report keeping. It
-          records the time of receiving calls, enroute, on scene, transport, and
-          destination, and this data can be saved for any desired use. The app
-          keeps track of each rescue, recording the time of call, enroute,
-          scene, transport, and destination with a single button press. At the
-          end of the trip, mileage can be recorded for reporting. These rescue
-          records are saved on the phone, and can be exported as a CSV file,
-          written down, or sent to a server.
-        </p>
-        <h2>Download</h2>
-        <div className="download-grid">
-          <div>
-            <h3>iOS</h3>
-            <a
-              target="_blank"
-              href="https://apps.apple.com/us/app/response-time-track/id1629269991"
-            >
-              <img src={AppleDownloadImage} alt="Apple Download Image" />
-            </a>
+      <div className="index-page">
+        <div className="title-container">
+          <h1>Effortless Time Tracking for EMS</h1>
+          <Link to="/download">Download Now &rarr;</Link>
+        </div>
+        <div className="screenshot-container">
+          {(!phoneSize) ? <img src={CallImg}></img> : <div></div>}
+          <img src={EnrouteImg}></img>
+          <img src={SceneImg}></img>
+          <img src={TransportImg}></img>
+          {(!phoneSize) ? <img src={DestinationImg}></img> : <div></div>}
+        </div>
+        <div className="documentation-container">
+          <p><Link to="/documentation">Read more about how our mobile app function in our documentation page &rarr;</Link></p>
+        </div>
+        <div className="displays-container">
+          <div className="display-container">
+            <h2>Premium Tracker</h2>
+            <p><Link to="/prices">Get precise location tracking with time records and secure cloud storage to stay organized &rarr;</Link></p>
           </div>
-          <div>
-            <h3>Android</h3>
-            <a
-              target="_blank"
-              href="https://play.google.com/store/apps/details?id=com.owenbean.ems"
-            >
-              <img src={AndroidDownloadImage} alt="Android Download Image" />
-            </a>
+          <div className="display-container">
+            <h2>Releases</h2>
+            <p><Link to="/releases">Our app keeps you updated with the newest releases, ensuring you're always equipped with the latest enhancements &rarr;</Link></p>
+          </div>
+          <div className="display-container">
+            <h2>Download</h2>
+            <p><Link to="/download">Our app is available on Android and iOS &rarr;</Link></p>
           </div>
         </div>
-        <h2>Documentation</h2>
-        <p>
-          Documentation has been composed to assist users in comprehending the
-          functioning of the mobile application. The documentation has been
-          divided into the various screens. Each screen will elucidate the
-          purpose of every button and text. Please click the button below to be
-          directed to the documentation webpage.
-        </p>
-        <Link to="/documentation">
-          <button>Documentation</button>
-        </Link>
-      </main>
+        <div className="feedback-container">
+          <h2>Feedback</h2>
+          <p className="feedback-text">Love to hear feedback on our app and how we can improve it</p>
+          <div>
+            <p className="feedback-label">Email (Optional)</p>
+            <input className="email-input" maxlength="100"></input>
+          </div>
+          <div>
+            <p className="feedback-label">Comment</p>
+            <textarea className="comment-input" data-limit-rows="true" maxlength="100" rows="5"></textarea>
+          </div>
+          <button>Send Feedback</button>
+        </div>
+      </div>
       <Footer></Footer>
     </div>
   );

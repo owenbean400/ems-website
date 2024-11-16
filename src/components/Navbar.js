@@ -23,11 +23,13 @@ const Navbar = (props) => {
       document.documentElement.style.setProperty("--textColor", "#c9c9c9");
       document.documentElement.style.setProperty("--displayColor", "#eee");
       document.documentElement.style.setProperty("--bgColor", "#050505");
+      document.documentElement.style.setProperty("--secondColor", "#2e2e2e");
     } else {
       document.documentElement.style.setProperty("--primColor", "#0099FF");
       document.documentElement.style.setProperty("--textColor", "#111");
       document.documentElement.style.setProperty("--displayColor", "white");
       document.documentElement.style.setProperty("--bgColor", "white");
+      document.documentElement.style.setProperty("--secondColor", "#dddddd");
     }
   }, []);
 
