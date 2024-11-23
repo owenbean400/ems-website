@@ -10,7 +10,7 @@ The history window will display all of the saved record.
 
 ![History Navigation](../../../images/doc/nav/history_nav.jpg)
 
-### Overall Action Buttons
+## Overall Action Buttons
 
 The action buttons are located on the top of history screen.
 
@@ -18,6 +18,11 @@ The action buttons are located on the top of history screen.
   ![Sync Icon](../../../images/doc/icon/filter.png)
 
   > Opens date selection for filtering rescue times call time.
+
+- Filter Records by Notes
+  ![Search Icon](../../../images/doc/icon/search.png)
+
+  > Tap on search icon will display a text box with another same icon to the left of text box. Fill in text box with text to filter through notes with. Either hit search on keyboard or search icon to the left of text box to filter notes. The filter will include the date filter.
 
 - Sync Cloud Data
   ![Sync Icon](../../../images/doc/icon/sync.png)
@@ -39,7 +44,7 @@ The action buttons are located on the top of history screen.
 
   > Toggles the time record history layout from either block grid style or spreadsheet grid style.
 
-### Edit Indiviual Record
+## Edit Indiviual Record
 
 ![Edit Window](../../../images/doc/screen/history_edit_screen.jpg)
 
@@ -61,8 +66,39 @@ After the time record has been finished being edited, press the back arrow on th
 - `Destination` _Date/Time_
 - `Mileage` _Decimal_
 - `Notes` _Text_
+- `Truck` _Truck_
+
+### Truck
+
+The truck will be the truck used during that rescue.
+The truck selection is setup in the settings window.
+
+### Location
+
+For those who have premium subscription can utilize the location feature attached to a time rescue.
+
+#### Location position
+
+Location of latitude and longitude of a time record will be attached.
+
+##### Location View
+
+Depending on the edit card view layout, there will be coordinate pair of separate latitude/longitude values within the same card of a specific time.
+
+###### Location Map
+
+There is a view map button on the button of editing a rescue that will display a Google map of time rescue.
+Each time that has a location position will 
+
+##### Location Edit
+
+When editing a datetime of a record, the editing of latitude and longitude will display after setting datetime.
+Hit complete to save changes of latitude/longitude value.
+Hit cancel to not save changes of latitude/longitude value.
 
 ## Layouts
+
+### History card layouts
 
 #### Block Grid Layout
 
@@ -85,9 +121,25 @@ There are two icons on each corner of each time record that is pressable.
   > Deletes the one record selected. Once deleted, there is no way to get the record back.
   > A confirmation prompt will display before deleting the record.
 
-##### Spreadsheet Grid Layout
+#### Spreadsheet Grid Layout
 
 ![History Window](../../../images/doc/screen/history_sheet.jpg)
 
 The spreadsheet grid layout compacts the time records to make it easier to see all the times.
 Tap on the horizontal list of times to edit the times on that record.
+
+### Edit Card
+
+#### Simple Card
+
+![Simple Card](../../../images/doc/screen/history_card_simple.jpg)
+
+The simple card layout will display time rescue name on the left and the datetime on the right.
+If paid for premium subscript, the location position coordinate will display under the datetime.
+
+#### Informative Card
+
+![Informative Card](../../../images/doc/screen/history_card_informative.jpg)
+
+The informative card layout will display time rescue name on the time.
+All of the date will be displayed below with name of data on the left and value of the data on the right.
