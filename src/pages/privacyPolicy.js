@@ -47,13 +47,13 @@ const IndexPage = () => {
         <p className="doc-txt">
           We use Firebase Analytics to track user interactions with the Response Time Track app, so that we can better understand how it is being used and use this information to develop new features.
         </p>
+        <h5>Performance</h5>
+        <p className="doc-txt">
+          We collect performance data not attached to the user with Firebase, so we monitor any performance problems with the app.
+        </p>
         <h5>Crashes</h5>
         <p className="doc-txt">
           We utilize Firebase Crashlytics to keep track of crash logs users may encounter while utilizing the Response Time Track app. This information is used solely to help debug and improve the quality of the app. No user data is collected and there is no option for users to opt-out of this process.
-        </p>
-        <h5>ADs</h5>
-        <p className="doc-txt">
-          We do not collect device identifiers or seek to identify individuals for advertising purposes. We use advertising to help fund the servers and backend used in Response Time Track.
         </p>
       </main>
       <Footer></Footer>
