@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import MetaData from "../components/Metadata";
 import DeleteAccountImage from "../images/delete/delete-account-app.jpg";
 import "../style/markdown.sass";
 
