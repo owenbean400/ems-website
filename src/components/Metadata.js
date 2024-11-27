@@ -10,7 +10,7 @@ const MetaData = (props) => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>{props.title}</title>
-        <meta name="description">{props.description ? props.description : ""}</meta>
+        <meta name="description" content={props.description ? props.description : ""} />
         <link rel="apple-touch-icon" sizes="180x180" href={AppleTouch} />
         <link rel="icon" type="image/png" sizes="32x32" href={Favicon32} />
         <link rel="icon" type="image/png" sizes="16x16" href={Favicon16} />
