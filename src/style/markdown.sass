@@ -331,15 +331,24 @@ body
         .displays-container
             width: 100vw
             display: grid
+            background-color: var(--secondColor)
+            padding: 32px 0
+            margin: 128px 0 32px 0
             @media screen and (min-width: $breakpoint-tablet)
-                grid-template-columns: auto auto auto
+                grid-template-columns: auto auto auto auto auto
                 justify-content: center
             @media screen and (max-width: $breakpoint-tablet)
                 grid-template-columns: auto
 
+            hr
+                border-color: var(--bgColor)
+
             .display-container
                 @media screen and (min-width: $breakpoint-tablet)
                     width: calc(100vw / 3 - 100px)
+                    &:nth-child(2)
+                        border-left: white 1px solid
+                        border-right: white 1px solid
                 @media screen and (max-width: $breakpoint-tablet)
                     width: calc(100vw - 100px)
                 margin: 32px

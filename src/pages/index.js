@@ -96,10 +96,12 @@ const IndexPage = () => {
             <h2>Premium Tracker</h2>
             <p><Link to="/prices">Get precise location tracking with time records and secure cloud storage to stay organized &rarr;</Link></p>
           </div>
+          {!phoneSize ? <hr></hr> : undefined}
           <div className="display-container">
             <h2>Releases</h2>
             <p><Link to="/releases">Our app keeps you updated with the newest releases, ensuring you"re always equipped with the latest enhancements &rarr;</Link></p>
           </div>
+          {!phoneSize ? <hr></hr> : undefined}
           <div className="display-container">
             <h2>Download</h2>
             <p><Link to="/download">Our app is available on Android and iOS &rarr;</Link></p>
