@@ -24,7 +24,8 @@ const R1_03 = () => {
   return (
     <div id="main">
       <Navbar isPhone={phoneSize}></Navbar>
-      <MetaData title="Response Time Track - 1.03 Release" />
+      <MetaData title="Response Time Track 1.03 Release Notes"
+        description="Added the ability to filter rescue time history by date and time for easier data management." />
       <main>
         <h1>1.03 Release Notes</h1>
         <p>

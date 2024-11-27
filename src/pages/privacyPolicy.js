@@ -23,7 +23,8 @@ const IndexPage = () => {
   return (
     <div id="main">
       <Navbar isPhone={phoneSize}></Navbar>
-      <MetaData title="Response Time Track - Private Policy" />
+      <MetaData title="Response Time Track Private Policy"
+        description="The Response Time Tracker Privacy Policy outlines how user data is collected, stored, and protected, ensuring transparency for app users." />
       <main>
         <h1>Privacy Policy</h1>
         <p>

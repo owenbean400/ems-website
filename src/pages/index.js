@@ -72,7 +72,9 @@ const IndexPage = () => {
 
   return (
     <div id="main">
-      <MetaData title="Response Time Track" />
+      <MetaData 
+        title="Response Time Track"
+        description="Track response times effortlessly with the Response Time Tracker App, designed for EMTs, paramedics, and EMS professionals. Available now for Android and iOS, this app simplifies time recording with just a few taps." />
       <Navbar isPhone={phoneSize}></Navbar>
       <div className="index-page">
         <div className="title-container">

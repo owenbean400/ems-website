@@ -25,7 +25,8 @@ const DownloadPage = () => {
   return (
     <div id="main">
       <Navbar isPhone={phoneSize}></Navbar>
-      <MetaData title="Response Time Track - Private Policy" />
+      <MetaData title="Response Time Track Download"
+        description="Download the Response Time Tracker app for Android and iOS to start tracking response times effortlessly." />
       <main>
         <h1>Download</h1>
         <div className="download-grid">

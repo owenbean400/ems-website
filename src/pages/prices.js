@@ -22,7 +22,8 @@ const PricesPage = () => {
 
     return (
         <div id="main">
-            <MetaData title="Response Time Track - Prices" />
+            <MetaData title="Response Time Track Prices"
+                description="Response Time Tracker offers a free plan for EMS professionals, with an optional premium upgrade at $4.99/month. Premium features include cloud storage and advanced location functionality." />
             <Navbar isPhone={phoneSize}></Navbar>
             <main className="prices-page">
                 <h1>Get the full potential of tracking</h1>

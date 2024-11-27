@@ -22,6 +22,9 @@ const GoogleDeletePage = () => {
 
   return (
     <div id="main">
+    <MetaData 
+      title="Response Time Track Delete Account Documentation"
+      description="Learn how to delete your account in the Response Time Tracker app with our step-by-step guide." />
       <Navbar isPhone={phoneSize}></Navbar>
       <main>
         <title>Google Delete Page</title>

@@ -24,7 +24,8 @@ const R1_1_8 = () => {
   return (
     <div id="main">
       <Navbar isPhone={phoneSize}></Navbar>
-      <MetaData title="Response Time Track - 1.1.8 Release" />
+      <MetaData title="Response Time Track 1.1.8 Release Notes"
+        description="Added email account login capability and renamed guest mode to offline mode for improved user access." />
       <main>
         <h1>1.1.8 Release Notes</h1>
         <p>

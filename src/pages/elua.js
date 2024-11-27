@@ -24,7 +24,8 @@ const ELUA = () => {
   return (
     <div id="main">
       <Navbar isPhone={phoneSize}></Navbar>
-      <MetaData title="Response Time Track - End User License Agreement" />
+      <MetaData title="Response Time Track End User License Agreement"
+        description="The Response Time Tracker End User License Agreement (EULA) details the terms and conditions for using the app." />
       <main>
         <h1>End User License Agreement</h1>
         <h3>Introduction</h3>
