@@ -56,7 +56,7 @@ const R1_01 = () => {
     {
       release: "1.1.2",
       description: "The app is now free to download, with select features moved to the subscription plan.",
-      date: "08/09/2024",
+      date: "08/09/2023",
       link: "/releases/1-1-2"
     },
     {
@@ -85,14 +85,22 @@ const R1_01 = () => {
       <MetaData title="Response Time Track Releases"
         description="Explore the Response Time Tracker Release Notes for detailed updates on app versions, features, and improvements." />
       <main>
-        <h1>Release Notes</h1>
-        { releases.map((release) => {
-          return <ReleaseItem 
-            releaseLink={release.link}
-            release={release.release}
-            description={release.description}
-            releaseDate={release.date}/>
-        }) }
+        <h1 className="max-width-desktop">Release Notes</h1>
+        <p className="max-width-desktop">Releases will be pushed to the Google Play Store and Apple App Store. New releases will be installed automatically if automatic updates are enabled in the phone's settings. Users who do not have the latest release can update the app manually through the Google Play Store or the Apple App Store.</p>
+        <div className="releases-container">
+          <div className="release-container-header">
+              <p className="release-name">Release</p>
+              <p className="release-description">Description</p>
+              <p className="release-date">Release Date</p>
+          </div>
+          { releases.map((release) => {
+            return <ReleaseItem 
+              releaseLink={release.link}
+              release={release.release}
+              description={release.description}
+              releaseDate={release.date}/>
+          }) }
+        </div>
       </main>
       <Footer></Footer>
     </div>

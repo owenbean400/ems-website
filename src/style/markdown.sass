@@ -167,6 +167,89 @@ body
             margin: 0 8px 0 0
             transform: scale()
 
+    
+    .release-container-header
+        @media screen and (min-width: $breakpoint-tablet)
+            display: grid
+            grid-template-columns: 100px auto 120px
+            align-items: center
+            margin: 0 auto
+            padding: 24px 8px 24px 16px
+            border-bottom: 1px solid var(--textColor)
+            max-width: $breakpoint-desktop
+        @media screen and (max-width: $breakpoint-tablet)
+            display: none
+
+        .release-description
+            margin: 0
+
+        .release-date
+            margin: 0
+            padding-left: 16px
+
+        .release-header
+            font-size: 16px
+            font-weight: normal
+            color: var(--textColor)
+
+    .release-container
+        display: grid
+        border-bottom: 1px solid var(--textColor)
+        @media screen and (min-width: $breakpoint-tablet)
+            grid-template-columns: 100px auto 120px
+            align-items: center
+            margin: 0 auto
+            padding: 24px 8px 24px 16px
+            max-width: $breakpoint-desktop
+        @media screen and (max-width: $breakpoint-tablet)
+            grid-template-areas: "item1" "item2" "item3"
+            grid-template-columns: auto
+            padding: 24px 16px
+        &:hover
+            background-color: var(--secondColor)
+
+        .release-name
+            font-size: 24px
+            font-weight: bold
+            color: var(--textColor)
+            @media screen and (min-width: $breakpoint-tablet)
+                margin: 0 0 0 4px
+                font-size: 24px
+            @media screen and (max-width: $breakpoint-tablet)
+                margin: 0
+                font-size: 32px
+                grid-area: item1
+
+        .release-description
+            @media screen and (min-width: $breakpoint-tablet)
+                margin: 0
+            @media screen and (max-width: $breakpoint-tablet)
+                margin: 24px 0 8px 0
+                grid-area: item3
+
+        .release-date
+            margin: 0
+            @media screen and (min-width: $breakpoint-tablet)
+                padding-left: 16px
+                font-size: 16px
+            @media screen and (max-width: $breakpoint-tablet)
+                grid-area: item2
+                font-size: 12px
+                padding-left: 0
+
+        .release-header
+            font-size: 16px
+            font-weight: normal
+            color: var(--textColor)
+
+    .releases-container
+        > .release-container:last-child
+            border-bottom: none
+
+    .max-width-desktop
+        max-width: $breakpoint-desktop
+        margin: 0 auto
+
     main
         @media screen and (min-width: $breakpoint-tablet)
             padding: 100px 64px 128px 64px
