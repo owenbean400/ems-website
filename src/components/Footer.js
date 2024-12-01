@@ -24,8 +24,16 @@ const Footer = () => {
       name: "Privacy Policy",
     },
     {
+      link: "/contact",
+      name: "Contact",
+    },
+    {
       link: "/elua",
-      name: "End User License Agreement",
+      name: "ELUA",
+    },
+    {
+      link: "/google-delete",
+      name: "Delete Account",
     },
   ];
 
