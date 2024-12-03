@@ -39,7 +39,7 @@ const R1_1_10 = () => {
           </ul>
           <li>Bug Fixes</li>
           <ul>
-             <li>Added card history layout option</li>
+             <li>Fix crashing on login screen due to logo not loading.</li>
           </ul>
         </ul>
         <p>
