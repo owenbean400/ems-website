@@ -24,6 +24,12 @@ const R1_01 = () => {
 
   const releases = [
     {
+      release: "1.1.11",
+      description: "Introduced new promotional options for app growth and enhanced performance monitoring features.",
+      date: "12/07/2024",
+      link: "/releases/1-1-11"
+    },
+    {
       release: "1.1.10",
       description: "Added in-app review rating and crash bug fix on login screen.",
       date: "12/03/2024",
