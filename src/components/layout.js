@@ -55,7 +55,7 @@ const Layout = ({ children }) => {
       <nav>
         <div className="nav-container-left">
           {(phoneSize ? 
-          <div className="hamburger-container" onClick={() => setShowDisplaySide(!showDisplaySide)}>
+          <div className="hamburger-container" role="presentation" onClick={() => setShowDisplaySide(!showDisplaySide)} onKeyDown={() => setShowDisplaySide(!showDisplaySide)}>
               <div className={(showDisplaySide) ? "x-line transition-bar" : "hamburger-bar transition-bar"}></div>
               <div className={(showDisplaySide) ? "x-line transition-bar" : "hamburger-bar transition-bar"}></div>
               {!showDisplaySide ? <div className="hamburger-bar"></div> : undefined}

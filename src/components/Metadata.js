@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Helmet } from "react-helmet";
 import AppleTouch from "../images/apple-touch-icon.png";
 import Favicon32 from "../images/favicon-32x32.png";
