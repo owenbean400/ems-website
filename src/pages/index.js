@@ -40,11 +40,11 @@ const IndexPage = () => {
           <Link to="/download">Download Now &rarr;</Link>
         </div>
         <div className="screenshot-container">
-          {(!phoneSize) ? <img src={CallImg} alt="call phone image"></img> : <div></div>}
-          <img src={EnrouteImg} alt="enroute phone image"></img>
-          <img src={SceneImg} alt="scene phone image"></img>
-          <img src={TransportImg} alt="transport phone image"></img>
-          {(!phoneSize) ? <img src={DestinationImg} alt="destination phone image"></img> : <div></div>}
+          {(!phoneSize) ? <img src={CallImg} alt="call phone"></img> : <div></div>}
+          <img src={EnrouteImg} alt="enroute phone"></img>
+          <img src={SceneImg} alt="scene phone"></img>
+          <img src={TransportImg} alt="transport phone "></img>
+          {(!phoneSize) ? <img src={DestinationImg} alt="destination phone"></img> : <div></div>}
         </div>
         <div className="documentation-container">
           <p><Link to="/documentation">Read more about how our mobile app function in our documentation page &rarr;</Link></p>

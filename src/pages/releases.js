@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "gatsby";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import MetaData from "../components/Metadata";

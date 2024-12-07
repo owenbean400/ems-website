@@ -13,7 +13,7 @@ const NavbarHamburger = (props) => {
 
     return (
         <div>
-            <div className="hamburger-container" onClick={() => setShowSideMenu(!showSideMenu)}>
+            <div className="hamburger-container" role="presentation" onClick={() => setShowSideMenu(!showSideMenu)} onKeyDown={() => setShowSideMenu(!showSideMenu)}>
                 <div className="hamburger-bar"></div>
                 <div className="hamburger-bar"></div>
                 <div className="hamburger-bar"></div>
@@ -21,7 +21,7 @@ const NavbarHamburger = (props) => {
             <div className="side-menu" style={{right: (showSideMenu) ? "0" : "-400px"}}>
                 <div className="side-menu-header">
                     <img src={Logo} alt="Response Time Track" />
-                    <div className="close-x-container" onClick={() => setShowSideMenu(false)}>
+                    <div className="close-x-container" role="presentation" onClick={() => setShowSideMenu(false)} onKeyDown={() => setShowSideMenu(false)}>
                         <div className="x-line"></div>
                         <div className="x-line"></div>
                     </div>

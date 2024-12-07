@@ -31,7 +31,7 @@ const GoogleDeletePage = () => {
         <title>Google Delete Page</title>
         <h1>How to Delete Account</h1>
         <p>If you want to delete your account, you must delete your account within the app. Within the main window of the app, press on delete account and tap yes to delete your account and all of your data.</p>
-        <img className="delete-image" src={DeleteAccountImage} alt="Delete Account Image"></img>
+        <img className="delete-image" src={DeleteAccountImage} alt="Delete Account"></img>
       </main>
       <Footer></Footer>
     </div>

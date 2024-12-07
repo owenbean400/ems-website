@@ -35,8 +35,9 @@ const DownloadPage = () => {
             <a
               target="_blank"
               href="https://apps.apple.com/us/app/response-time-track/id1629269991"
+              rel="noreferrer"
             >
-              <img src={AppleDownloadImage} alt="Apple Download Image" />
+              <img src={AppleDownloadImage} alt="Apple Download" />
             </a>
           </div>
           <div>
@@ -44,8 +45,9 @@ const DownloadPage = () => {
             <a
               target="_blank"
               href="https://play.google.com/store/apps/details?id=com.owenbean.ems"
+              rel="noreferrer"
             >
-              <img src={AndroidDownloadImage} alt="Android Download Image" />
+              <img src={AndroidDownloadImage} alt="Android Download" />
             </a>
           </div>
         </div>
