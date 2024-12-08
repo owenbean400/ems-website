@@ -11,6 +11,7 @@ import SceneImg from "../images/screenshot/scene.png"
 import TransportImg from "../images/screenshot/transport.png"
 import DestinationImg from "../images/screenshot/destination.png"
 import ContactForm from "../components/ContactForm";
+import CaptiveImg from "../images/phoneCaptive.png"
 
 // markup
 const IndexPage = () => {
@@ -35,19 +36,18 @@ const IndexPage = () => {
         description="Track response times effortlessly with the Response Time Tracker App, designed for EMTs, paramedics, and EMS professionals. Available now for Android and iOS, this app simplifies time recording with just a few taps." />
       <Navbar isPhone={phoneSize}></Navbar>
       <div className="index-page">
-        <div className="title-container">
-          <h1>Effortless Time Tracking for EMS</h1>
-          <Link to="/download">Download Now &rarr;</Link>
-        </div>
-        <div className="screenshot-container">
-          {(!phoneSize) ? <img src={CallImg} alt="call phone"></img> : <div></div>}
-          <img src={EnrouteImg} alt="enroute phone"></img>
-          <img src={SceneImg} alt="scene phone"></img>
-          <img src={TransportImg} alt="transport phone "></img>
-          {(!phoneSize) ? <img src={DestinationImg} alt="destination phone"></img> : <div></div>}
-        </div>
-        <div className="documentation-container">
-          <p><Link to="/documentation">Read more about how our mobile app function in our documentation page &rarr;</Link></p>
+        <div className="header-color-background"></div>
+        <div className="header-container">
+          <img src={CaptiveImg} />
+          <div className="header-text-container">
+            <div className="title-container">
+              <h1>Time Tracking for EMS</h1>
+              <Link to="/download">Download Now &rarr;</Link>
+            </div>
+            <div className="documentation-container">
+              <p><Link to="/documentation">Read more about how our mobile app function in our documentation page &rarr;</Link></p>
+            </div>
+          </div>
         </div>
         <div className="displays-container">
           <div className="display-container">
@@ -69,6 +69,13 @@ const IndexPage = () => {
           <h2>Feedback</h2>
           <p className="feedback-text">Love to hear feedback on our app and how we can improve it</p>
           <ContactForm />
+        </div>
+        <div className="screenshot-container">
+          {(!phoneSize) ? <img src={CallImg}></img> : <div></div>}
+          <img src={EnrouteImg}></img>
+          <img src={SceneImg}></img>
+          <img src={TransportImg}></img>
+          {(!phoneSize) ? <img src={DestinationImg}></img> : <div></div>}
         </div>
       </div>
       <Footer></Footer>
