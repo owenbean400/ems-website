@@ -23,6 +23,12 @@ const R1_01 = () => {
 
   const releases = [
     {
+      release: "1.1.12",
+      description: "Cloud sync togglable and Android maintenance.",
+      date: "12/22/2024",
+      link: "/releases/1-1-12"
+    },
+    {
       release: "1.1.11",
       description: "Introduced new promotional options for app growth and enhanced performance monitoring features.",
       date: "12/07/2024",
