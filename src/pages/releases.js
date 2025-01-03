@@ -25,7 +25,7 @@ const R1_01 = () => {
     {
       release: "1.1.12",
       description: "Cloud sync togglable and Android maintenance.",
-      date: "12/22/2024",
+      date: "01/02/2025",
       link: "/releases/1-1-12"
     },
     {
