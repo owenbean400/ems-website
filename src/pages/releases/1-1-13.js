@@ -35,7 +35,7 @@ const R1_1_13 = () => {
         <ul>
           <li>Code Maintenance</li>
           <ul>
-            <li>Updated Flutter from 3.27.1 to 2.27.3.</li>
+            <li>Updated Flutter from 3.27.1 to 2.27.4.</li>
             <li>Updated Firebase packages.</li>
             <li>Fix async gaps during several operations.</li>
           </ul>
