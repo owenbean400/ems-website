@@ -8,7 +8,8 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
-          default: require.resolve("./src/components/Layout.js"),
+          default: require.resolve("./src/components/DocumentationLayout.js"),
+          api_documentation: require.resolve("./src/components/ApiDocumentationLayout.js"),
         },
         gatsbyRemarkPlugins: [
           {
@@ -33,6 +34,13 @@ module.exports = {
       options: {
         name: `documentation`,
         path: `${__dirname}/src/pages/documentation/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `api_documentation`,
+        path: `${__dirname}/src/pages/api_documentation/`,
       },
     },
     `gatsby-plugin-sass`,
