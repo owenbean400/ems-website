@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Sidebar from "./Sidebar"
 import MetaData from "./Metadata";
-import "../style/markdown.sass";
+import "../style/api_markdown.sass";
 
 const ApiDocumentationLayout = ({ children }) => {
   const [showDisplaySide, setShowDisplaySide] = useState(false);

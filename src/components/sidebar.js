@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
 
-const SideBar = (props) => {
+const Sidebar = (props) => {
 
   const data = useStaticQuery(
     graphql`
@@ -60,4 +60,4 @@ function nameToDisplay(name) {
     .join(" ");
 }
 
-export default SideBar;
+export default Sidebar;
