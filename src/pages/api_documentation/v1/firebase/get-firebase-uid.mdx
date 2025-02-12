@@ -1,0 +1,59 @@
+---
+title: Get Firebase UID
+path: /api_documentation/v1/firebase/get-firebase-uid.mdx
+date: 2025-02-11
+---
+
+# Get Firebase uID
+
+## GET `/v1/system/firebase/uid`
+
+Gets the Firebase uID from Response Time Track from Firebase token.
+
+### Request
+
+Headers
+
+```
+"Authorization": "Bearer <Token>"
+```
+
+### Response `200`
+
+#### Body
+```
+{
+    "uId": [string] Firebase uId
+}
+```
+
+### Response `401`
+
+#### Body
+```
+{
+    "Error": "Unauthorized",
+    "message": [string] Authorization issue
+}
+```
+
+#### Messages
+
+- You are not authorized to access this resource
+> The token from Firebase is invalid
+- Authorization header is missing
+> There is no "Authorization" in the header request.
+- Invalid authorization header format
+> The "Authorization" header does not have "Bearer Token" format
+
+### Response `500`
+
+#### Body
+```
+{
+    "error": "Internal Server Error",
+    "message": "Internal Server Error",
+}
+```
+
+### cURL Command Example

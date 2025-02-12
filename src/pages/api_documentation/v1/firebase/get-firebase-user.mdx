@@ -1,0 +1,57 @@
+---
+title: Get Firebase UID
+path: /api_documentation/v1/firebase/get-firebase-user.mdx
+date: 2025-02-11
+---
+
+# Get Firebase uID
+
+## GET `/v1/system/firebase/user`
+
+Get the user ID from Response Time Track that is associated with the Firebase user. A user ID is created if it does not exist in Response Time Track data.
+
+### Request
+
+Headers
+
+```
+"Authorization": "Bearer <Token>"
+```
+
+### Response `200`
+
+Body
+```
+{
+    "user_id": [string] EMS User ID
+}
+```
+
+### Response `401`
+
+Body
+```
+{
+    "Error": "Unauthorized",
+    "message": [string] Authorization issue
+}
+```
+
+Messages
+
+- You are not authorized to access this resource
+> The token from Firebase is invalid
+- Authorization header is missing
+> There is no "Authorization" in the header request.
+- Invalid authorization header format
+> The "Authorization" header does not have "Bearer Token" format
+
+### Response `500`
+
+Body
+```
+{
+    "error": "Internal Server Error",
+    "message": "Internal Server Error",
+}
+```
