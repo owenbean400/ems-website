@@ -1,0 +1,68 @@
+---
+title: Delete truck by ID
+path: /api_documentation/v1/ems/delete-truck.mdx
+date: 2025-02-15
+---
+
+# Delete Truck by ID
+
+## DELETE `/v1/ems/truck/{id}`
+
+Delete a truck by the id. This is idempotent whether the record exist or not, but will provide detail if the record has existed through the response. The record will not be deleted if the rescue record is not owned by the user.
+
+### Request
+
+Headers
+
+```
+"Authorization": "Bearer <Token>"
+```
+
+| Path Parameters | |
+| ---- | ----- |
+| id | The ID of the truck. |
+
+### Response `200`
+
+The truck record does not exist. 
+
+#### Body
+
+```
+{
+    "deleted": [boolean] Record was deleted,
+}
+```
+
+### Response `401`
+
+Authorization issue.
+
+#### Body
+```
+{
+    "Error": "Unauthorized",
+    "message": [string] Authorization issue
+}
+```
+
+#### Messages
+
+- You are not authorized to access this resource
+> The token from Firebase is invalid
+- Authorization header is missing
+> There is no "Authorization" in the header request.
+- Invalid authorization header format
+> The "Authorization" header does not have "Bearer Token" format.
+
+### Response `500`
+
+Internal error with the server.
+
+#### Body
+```
+{
+    "error": "Internal Server Error",
+    "message": "Internal Server Error"
+}
+```

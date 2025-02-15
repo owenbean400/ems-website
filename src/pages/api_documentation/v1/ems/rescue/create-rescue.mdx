@@ -1,0 +1,100 @@
+---
+title: Create Rescue Record
+path: /api_documentation/v1/ems/truck/create-rescue.mdx
+date: 2025-02-15
+---
+
+# Create Rescue
+
+## POST `/v1/ems/rescue`
+
+Create a rescue record for the user.
+
+### Request
+
+Headers
+
+```
+"Authorization": "Bearer <Token>"
+```
+
+Body
+```
+{
+    "call_date": [string] Call date time in ISO 8602,
+    "enroute_date": [string] Enroute date time in ISO 8602,
+    "scene_date": [string] Scene date time in ISO 8602,
+    "transportation": [string] Transportation date time in ISO 8602,
+    "destination_date" [string] Destination date time in ISO 8602,
+    "mileage": [number] Amount of mileage with rescue,
+    "notes": [string] Extra notes to the rescue,
+    "truck_id": [string | NULL] The ID of truck record
+}
+```
+
+### Response `201`
+
+Rescue record has been created.
+
+#### Body
+
+```
+{
+    "id": [string] The ID of the record,
+    "call_date": [string] Call date time in ISO 8602,
+    "enroute_date": [string] Enroute date time in ISO 8602,
+    "scene_date": [string] Scene date time in ISO 8602,
+    "transportation": [string] Transportation date time in ISO 8602,
+    "destination_date" [string] Destination date time in ISO 8602,
+    "mileage": [number] Amount of mileage with rescue,
+    "notes": [string] Extra notes to the rescue,
+    "truck_id": [string] The ID of truck record,
+    "truck_id": [string | NULL] The ID of truck record.
+}
+```
+
+### Response `400`
+
+Bad request that was triggered from database failing to create the record.
+
+#### Body
+```
+{
+    "error":   "Bad Request",
+    "message": "Error creating record",
+}
+```
+
+
+### Response `401`
+
+Authorization issue.
+
+#### Body
+```
+{
+    "Error": "Unauthorized",
+    "message": [string] Authorization issue
+}
+```
+
+#### Messages
+
+- You are not authorized to access this resource
+> The token from Firebase is invalid
+- Authorization header is missing
+> There is no "Authorization" in the header request.
+- Invalid authorization header format
+> The "Authorization" header does not have "Bearer Token" format.
+
+### Response `500`
+
+Internal error with the server.
+
+#### Body
+```
+{
+    "error": "Internal Server Error",
+    "message": "Internal Server Error"
+}
+```

@@ -1,0 +1,87 @@
+---
+title: Create Device
+path: /api_documentation/v1/ems/device/create-device.mdx
+date: 2025-02-15
+---
+
+# Create Device
+
+## POST `/v1/ems/device`
+
+Create a device record for the user.
+
+### Request
+
+#### Headers
+
+```
+"Authorization": "Bearer <Token>"
+```
+
+#### Body
+```
+{
+    "device_name": [string] Device name,
+    "os": [string] Device OS system
+}
+```
+
+### Response `201`
+
+Device record has been created.
+
+#### Body
+
+```
+{
+    "id": [string] ID of record,
+    "device_name": [string] Device name,
+    "device_id": [string] Generated device ID,
+    "os": [string] Device OS System
+}
+```
+
+### Response `400`
+
+Bad request from database creation.
+
+#### Body
+```
+{
+    "error": "Bad Request",
+    "message": "Error creating device",
+}
+```
+
+### Response `401`
+
+Authorization issue.
+
+#### Body
+```
+{
+    "Error": "Unauthorized",
+    "message": [string] Authorization issue
+}
+```
+
+#### Messages
+
+- You are not authorized to access this resource
+> The token from Firebase is invalid
+- Authorization header is missing
+> There is no "Authorization" in the header request.
+- Invalid authorization header format
+> The "Authorization" header does not have "Bearer Token" format.
+
+### Response `500`
+
+Internal error with the server.
+
+#### Body
+```
+{
+    "error": "Internal Server Error",
+    "message": "Internal Server Error"
+}
+```

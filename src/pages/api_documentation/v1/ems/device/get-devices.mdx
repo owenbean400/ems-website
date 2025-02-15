@@ -1,0 +1,97 @@
+---
+title: Get Devices
+path: /api_documentation/v1/ems/device/get-devices.mdx
+date: 2025-02-15
+---
+
+# Get Devices
+
+## GET `/v1/ems/device`
+
+Gets a list of devices of user through paging. Pagination allow for smaller set of data to be sent over through the api that helps prevent huge data transfer over the network.
+
+### Request
+
+#### Headers
+
+```
+"Authorization": "Bearer <Token>"
+```
+
+| Query Parameters | |
+| ---- | ----- |
+| pageNumber | The page number of fetching device records. Must be an integer greater than 0. Default value to first page. |
+| pageSize | The number of items in the list fetched from a page. Must be an integer between 1 and 20 inclusively. Default value is 5. |
+
+### Response `200`
+
+The devices has been successfully fetched.
+
+#### Body
+
+```
+{
+    "pageSize": [number] The page size of the content,
+    "pageNumber": [number] The page number of the content,
+    "content": [
+        {
+            "id": [string] ID of record,
+            "device_name": [string] Device name,
+            "device_id": [string] Generated device ID,
+            "os": [string] Device OS System
+        },
+        ...
+    ]
+}
+```
+
+### Response `400`
+
+There was an issue with the query parameters.
+
+#### Body
+```
+{
+    "error": [string] error,
+    "message": [string] message about the error
+}
+```
+
+#### Messages
+- pageNumber must be an int that is greater than 0.
+> The pageNumber query was not a whole number that is greater than 0.
+- pageSize must be an int that is greater than 0 and less than or equal to 20.
+> The pageSize query was not a whole number that is greater than 0 and less than or equal to 20.
+
+### Response `401`
+
+Authorization issue.
+
+#### Body
+```
+{
+    "Error": "Unauthorized",
+    "message": [string] Authorization issue
+}
+```
+
+#### Messages
+
+- You are not authorized to access this resource
+> The token from Firebase is invalid
+- Authorization header is missing
+> There is no "Authorization" in the header request.
+- Invalid authorization header format
+> The "Authorization" header does not have "Bearer Token" format.
+
+### Response `500`
+
+Internal error with the server.
+
+#### Body
+```
+{
+    "error": "Internal Server Error",
+    "message": "Internal Server Error"
+}
+```

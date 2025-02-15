@@ -1,0 +1,90 @@
+---
+title: Update Rescue
+path: /api_documentation/v1/ems/update-rescue.mdx
+date: 2025-02-15
+---
+
+# Update Rescue
+
+## PUT `/v1/ems/rescue`
+
+Update a rescue with all values provided. All fields must be provided.
+
+### Request
+
+Headers
+
+```
+"Authorization": "Bearer <Token>"
+```
+
+#### Body
+
+```
+{
+    "id": [string] The ID of the record,
+    "call_date": [string] Call date time in ISO 8602,
+    "enroute_date": [string] Enroute date time in ISO 8602,
+    "scene_date": [string] Scene date time in ISO 8602,
+    "transportation": [string] Transportation date time in ISO 8602,
+    "destination_date" [string] Destination date time in ISO 8602,
+    "mileage": [number] Amount of mileage with rescue,
+    "notes": [string] Extra notes to the rescue,
+    "truck_id": [string] The ID of truck record,
+    "truck_id": [string | NULL] The ID of truck record.
+}
+```
+
+### Response `201`
+
+The rescue has been successfully updated. Response is the newly updated truck data.
+
+#### Body
+
+```
+{
+    "id": [string] The ID of the record,
+    "call_date": [string] Call date time in ISO 8602,
+    "enroute_date": [string] Enroute date time in ISO 8602,
+    "scene_date": [string] Scene date time in ISO 8602,
+    "transportation": [string] Transportation date time in ISO 8602,
+    "destination_date" [string] Destination date time in ISO 8602,
+    "mileage": [number] Amount of mileage with rescue,
+    "notes": [string] Extra notes to the rescue,
+    "truck_id": [string] The ID of truck record,
+    "truck_id": [string | NULL] The ID of truck record.
+}
+```
+
+### Response `401`
+
+Authorization issue.
+
+#### Body
+```
+{
+    "Error": "Unauthorized",
+    "message": [string] Authorization issue
+}
+```
+
+#### Messages
+
+- You are not authorized to access this resource
+> The token from Firebase is invalid
+- Authorization header is missing
+> There is no "Authorization" in the header request.
+- Invalid authorization header format
+> The "Authorization" header does not have "Bearer Token" format.
+
+### Response `500`
+
+Internal error with the server.
+
+#### Body
+```
+{
+    "error": "Internal Server Error",
+    "message": "Internal Server Error"
+}
+```
