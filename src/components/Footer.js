@@ -13,7 +13,11 @@ const Footer = () => {
     },
     {
       link: "/documentation",
-      name: "Documentation",
+      name: "User Doc",
+    },
+    {
+      link: "/api_documentation",
+      name: "API Doc",
     },
     {
       link: "/releases",
