@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
-import SidebarSection from "./SidebarSection";
+import { SidebarNode } from "../class/SidebarNode";
+import { Tree } from "../class/Tree"; 
 
 const Sidebar = (props) => {
 
@@ -54,7 +55,7 @@ const Sidebar = (props) => {
   }
 
   function generateTree(values, name, start) {
-    const node = new Node({isDirectory: true, name: name});
+    const node = new SidebarNode({isDirectory: true, name: name});
     const tree = new Tree();
     tree.root = node;
 
@@ -104,85 +105,4 @@ const Sidebar = (props) => {
   );
 };
 
-function absolutePathToLink(path) {
-  return "/" + path.replace(".mdx", "");
-}
-
-function nameToDisplay(name) {
-  return name
-    .split("-")
-    .map((value) => {
-      return value.charAt(0).toUpperCase() + value.substring(1);
-    })
-    .join(" ")
-    .replace(".mdx", "");
-}
-
 export default Sidebar;
-
-class Node {
-  constructor(nodeData) {
-    this.nodeData = nodeData;
-    this.children = [];
-  }
-
-  add(nodeData) {
-    let newNode = new Node(nodeData)
-    if (nodeData.isDirectory) {
-      this.children.push(newNode);
-    } else {
-      this.children.unshift(newNode);
-    }
-    return newNode;
-  }
-  remove(nodeData) {
-    this.children = this.children.filter((node) => {
-      return node.nodeData !== nodeData;
-    });
-  }
-
-  htmlRender() {
-    if (this.nodeData.isDirectory) {
-      let context = [];
-      for (let childNode of this.children) {
-        context.push(childNode.htmlRender());
-      }
-      return <SidebarSection
-        title={this.nodeData.name}
-        children={context}
-      ></SidebarSection>
-    } else {
-      return <li>
-        <Link to={absolutePathToLink(this.nodeData.absolutePath)}>
-          {nameToDisplay(this.nodeData.name)}
-        </Link>
-      </li>
-    }
-  }
-}
-
-class Tree {
-  constructor() {
-    this.root = null;
-  }
-
-  traverseBF(fn) {
-    const arr = [this.root];
-    while (arr.length) {
-      const node = arr.shift();
-
-      arr.push(...node.children);
-      fn(node);
-    }
-  }
-
-  traverseDF(fn) {
-    const arr = [this.root];
-    while (arr.length) {
-      const node = arr.shift();
-
-      arr.unshift(...node.children);
-      fn(node);
-    }
-  }
-}
