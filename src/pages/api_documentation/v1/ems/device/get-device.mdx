@@ -1,0 +1,75 @@
+---
+title: Get Device by Device ID
+path: /api_documentation/v1/ems/device/get-device.mdx
+date: 2025-02-15
+---
+
+# Get Device by Device ID
+
+## GET `/v1/ems/device/{device_id}`
+
+Gets a device record from device ID for the user.
+
+### Request
+
+#### Headers
+
+```
+"Authorization": "Bearer <Token>"
+```
+
+| Path Parameters | |
+| ---- | ----- |
+| device_id | The device ID of the device. |
+
+### Response `200`
+
+The device has been successfully found and returned.
+
+#### Body
+
+```
+{
+    "id": [string] ID of record,
+    "device_name": [string] Device name,
+    "device_id": [string] Generated device ID,
+    "os": [string] Device OS System
+}
+```
+
+### Response `401`
+
+Authorization issue.
+
+#### Body
+```
+{
+    "Error": "Unauthorized",
+    "message": [string] Authorization issue
+}
+```
+
+#### Messages
+
+- You are not authorized to access this resource
+> The token from Firebase is invalid
+- Authorization header is missing
+> There is no "Authorization" in the header request.
+- Invalid authorization header format
+> The "Authorization" header does not have "Bearer Token" format.
+
+### Response `404`
+
+A device was not found with that device ID for the user.
+
+### Response `500`
+
+Internal error with the server.
+
+#### Body
+```
+{
+    "error": "Internal Server Error",
+    "message": "Internal Server Error"
+}
+```

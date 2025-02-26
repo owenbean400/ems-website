@@ -1,0 +1,81 @@
+---
+title: Post Truck
+path: /api_documentation/v1/ems/truck/create-truck.mdx
+date: 2025-02-12
+---
+
+# Create Truck
+
+## POST `/v1/ems/truck`
+
+Create a truck record for the user.
+
+### Request
+
+Headers
+
+```
+"Authorization": "Bearer <Token>"
+```
+
+Body
+```
+{
+    "name": [string] Truck name,
+    "license": [string] Truck license number
+}
+```
+
+### Response `201`
+
+Truck record has been created.
+
+#### Body
+
+```
+{
+    "id": [string] ID of record,
+    "name": [string] Truck name,
+    "license": [string] Truck license number
+}
+```
+
+### Response `401`
+
+Authorization issue.
+
+#### Body
+```
+{
+    "Error": "Unauthorized",
+    "message": [string] Authorization issue
+}
+```
+
+#### Messages
+
+- You are not authorized to access this resource
+> The token from Firebase is invalid
+- Authorization header is missing
+> There is no "Authorization" in the header request.
+- Invalid authorization header format
+> The "Authorization" header does not have "Bearer Token" format.
+
+### Response `500`
+
+Internal error with the server.
+
+#### Body
+```
+{
+    "error": "Internal Server Error",
+    "message": [string] Error message
+}
+```
+
+#### Messages
+
+- Error creating record
+> Error creating the record in the database.
+- Internal Server Error
+> Generic error message for security reasons.

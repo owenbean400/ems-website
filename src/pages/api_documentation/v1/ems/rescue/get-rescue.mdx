@@ -1,0 +1,81 @@
+---
+title: Get Rescue by ID
+path: /api_documentation/v1/ems/get-rescue.mdx
+date: 2025-02-12
+---
+
+# Get Rescue by ID
+
+## GET `/v1/ems/rescue/{id}`
+
+Gets a rescue record from ID for the user.
+
+### Request
+
+Headers
+
+```
+"Authorization": "Bearer <Token>"
+```
+
+| Path Parameters | |
+| ---- | ----- |
+| id | The ID of the rescue. |
+
+### Response `200`
+
+The truck has been successfully found and returned.
+
+#### Body
+
+```
+{
+    "id": [string] The ID of the record,
+    "call_date": [string] Call date time in ISO 8602,
+    "enroute_date": [string] Enroute date time in ISO 8602,
+    "scene_date": [string] Scene date time in ISO 8602,
+    "transportation": [string] Transportation date time in ISO 8602,
+    "destination_date" [string] Destination date time in ISO 8602,
+    "mileage": [number] Amount of mileage with rescue,
+    "notes": [string] Extra notes to the rescue,
+    "truck_id": [string] The ID of truck record,
+    "truck_id": [string | NULL] The ID of truck record.
+}
+```
+
+### Response `401`
+
+Authorization issue.
+
+#### Body
+```
+{
+    "Error": "Unauthorized",
+    "message": [string] Authorization issue
+}
+```
+
+#### Messages
+
+- You are not authorized to access this resource
+> The token from Firebase is invalid
+- Authorization header is missing
+> There is no "Authorization" in the header request.
+- Invalid authorization header format
+> The "Authorization" header does not have "Bearer Token" format.
+
+### Response `404`
+
+A rescue was not found with that ID for the user.
+
+### Response `500`
+
+Internal error with the server.
+
+#### Body
+```
+{
+    "error": "Internal Server Error",
+    "message": "Internal Server Error"
+}
+```

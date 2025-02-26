@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import SideBar from "./sidebar";
+import Sidebar from "./Sidebar";
 import MetaData from "./Metadata";
 import "../style/markdown.sass";
 
-const Layout = ({ children }) => {
+const DocumentationLayout = ({ children }) => {
   const [showDisplaySide, setShowDisplaySide] = useState(false);
   const [phoneSize, setPhoneSize] = useState(false);
 
@@ -64,7 +64,7 @@ const Layout = ({ children }) => {
         </div>
       </nav>
       <main class="document-main">
-        <SideBar isShown={showDisplaySide} onClickArrow={() => setShowDisplaySide(!showDisplaySide)}></SideBar>
+        <Sidebar isShown={showDisplaySide} onClickArrow={() => setShowDisplaySide(!showDisplaySide)} sourceDirectory="documentation"></Sidebar>
         <div className="article-container">
           <article>{children}</article>
         </div>
@@ -73,4 +73,4 @@ const Layout = ({ children }) => {
   );
 };
 
-export default Layout;
+export default DocumentationLayout;

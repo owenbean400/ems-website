@@ -285,34 +285,34 @@ body
             h1
                 color: var(--primColor)
                 font-weight: bold
-                font-size: 3rem
-                margin: 12px 0 8px 0
+                font-size: 42px
+                margin: 24px 0
 
             h2
                 color: var(--textColor)
-                margin: 64px 0 8px 0
+                margin: 20px 0
                 @media screen and (min-width: $breakpoint-phone)
-                    font-size: 48px
-                @media screen and (max-width: $breakpoint-phone)
                     font-size: 24px
+                @media screen and (max-width: $breakpoint-phone)
+                    font-size: 20px
 
             h3
                 color: var(--textColor)
-                margin: 24px 0 0 0
+                margin: 16px 0
 
             h4
                 color: var(--textColor)
                 font-weight: bold
                 font-size: 1.25 rem
-                margin: 24px 0 0 0
+                margin: 12px 0
 
             h5
                 color: var(--textColor)
-                margin: 24px 0 0 0
+                margin: 8px 0
 
             h6
                 color: var(--textColor)
-                margin: 24px 0 0 0
+                margin: 4px 0
 
             p
                 color: var(--textColor)
@@ -325,9 +325,23 @@ body
                 @media screen and (max-width: $breakpoint-phone)
                     margin: 0 0 0 4px
 
+            pre
+                background-color: var(--bgColor)
+                padding: 6px
+                border-radius: 4px
+                overflow-x: auto
+
+                code
+                    padding: 0px
+                    margin: 0px
+
             code
                 font-family: $font-family
-                color: var(--primColor)
+                color: var(--textColor)
+                background-color: var(--bgColor)
+                border-radius: 4px
+                padding: 6px
+                margin: 6px
 
             .delete-image
                 max-width: 300px
@@ -369,7 +383,6 @@ body
                 display: flex
                 flex-direction: column
                 justify-content: space-between
-                overflow-y: auto
                 @media screen and (max-width: $breakpoint-phone)
                     position: absolute
                     top: 64px
@@ -377,6 +390,22 @@ body
                     -webkit-box-shadow: -8px 0px 32px 0px rgba(0,0,0,0.75)
                     -moz-box-shadow: -8px 0px 32px 0px rgba(0,0,0,0.75)
                     box-shadow: -8px 0px 32px 0px rgba(0,0,0,0.75)
+
+                .arrow
+                    border: solid var(--textColor)
+                    border-width: 0 3px 3px 0
+                    display: inline-block
+                    padding: 3px
+
+                .right
+                    transform: rotate(-45deg)
+                    -webkit-transform: rotate(-45deg)
+                    margin: 0 8px 2px 0
+
+                .down
+                    transform: rotate(45deg)
+                    -webkit-transform: rotate(45deg)
+                    margin: 0 8px 4px 0
 
                 a
                     color: var(--textColor)
@@ -387,7 +416,10 @@ body
 
                 ul
                     list-style-type: none
-                    padding: 0 0 0 16px
+                    padding: 0 0 0 18px
+
+                    .section-title
+                        cursor: pointer
 
                     li
                         margin: 8px 0
@@ -414,11 +446,11 @@ body
             color: var(--bgColor)
             flex-shrink: 0
             position: absolute
-            bottom: -48px
+            bottom: -68px
             @media screen and (min-width: $breakpoint-phone)
                 height: 96px
             @media screen and (max-width: $breakpoint-phone)
-                height: 180px
+                height: 200px
 
             ul
                 list-style-type: none

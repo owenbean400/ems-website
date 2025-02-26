@@ -1,0 +1,87 @@
+---
+title: Update device
+path: /api_documentation/v1/ems/device/update-device.mdx
+date: 2025-02-15
+---
+
+# Update Device
+
+## PATCH `/v1/ems/device`
+
+Update a device with values provided.
+
+### Request
+
+#### Headers
+
+```
+"Authorization": "Bearer <Token>"
+```
+
+#### Body
+```
+{
+    "device_name": [string] Device name,
+    "os": [string] Device OS system
+}
+```
+
+### Response `200`
+
+Device has been successfully updated. Response is the newly updated device data.
+
+#### Body
+
+```
+{
+    "id": [string] ID of record,
+    "device_name": [string] Device name,
+    "device_id": [string] Generated device ID,
+    "os": [string] Device OS System
+}
+```
+
+### Response `400`
+
+Bad request from database update of device record.
+
+#### Body
+```
+{
+    "Error": "Unauthorized",
+    "message": "Error updating database"
+}
+```
+
+### Response `401`
+
+Authorization issue.
+
+#### Body
+```
+{
+    "Error": "Unauthorized",
+    "message": [string] Authorization issue
+}
+```
+
+#### Messages
+
+- You are not authorized to access this resource
+> The token from Firebase is invalid
+- Authorization header is missing
+> There is no "Authorization" in the header request.
+- Invalid authorization header format
+> The "Authorization" header does not have "Bearer Token" format.
+
+### Response `500`
+
+Internal error with the server.
+
+#### Body
+```
+{
+    "error": "Internal Server Error",
+    "message": "Internal Server Error"
+}
+```

@@ -1,0 +1,74 @@
+---
+title: Get Truck by ID
+path: /api_documentation/v1/ems/get-truck.mdx
+date: 2025-02-12
+---
+
+# Get Truck by ID
+
+## GET `/v1/ems/truck/{id}`
+
+Gets a truck record from ID for the user.
+
+### Request
+
+Headers
+
+```
+"Authorization": "Bearer <Token>"
+```
+
+| Path Parameters | |
+| ---- | ----- |
+| id | The ID of the truck. |
+
+### Response `200`
+
+The truck has been successfully found and returned.
+
+#### Body
+
+```
+{
+    "id": [string] ID of record,
+    "name": [string] Truck name,
+    "license": [string] Truck license number
+}
+```
+
+### Response `401`
+
+Authorization issue.
+
+#### Body
+```
+{
+    "Error": "Unauthorized",
+    "message": [string] Authorization issue
+}
+```
+
+#### Messages
+
+- You are not authorized to access this resource
+> The token from Firebase is invalid
+- Authorization header is missing
+> There is no "Authorization" in the header request.
+- Invalid authorization header format
+> The "Authorization" header does not have "Bearer Token" format.
+
+### Response `404`
+
+A truck was not found with that ID for the user.
+
+### Response `500`
+
+Internal error with the server.
+
+#### Body
+```
+{
+    "error": "Internal Server Error",
+    "message": "Internal Server Error"
+}
+```
