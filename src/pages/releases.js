@@ -23,6 +23,12 @@ const R1_01 = () => {
 
   const releases = [
     {
+      release: "1.1.14",
+      description: "Flutter code maintenance and truck bug fixes with multiple spaces in sequence.",
+      date: "03/15/2025",
+      link: "/releases/1-1-14"
+    },
+    {
       release: "1.1.13",
       description: "Flutter code maintenance and database migration bug fixes.",
       date: "02/08/2025",
