@@ -1,0 +1,94 @@
+---
+title: Sync truck record
+path: /api_documentation/v1/ems/truck/sync-truck.mdx
+date: 2025-03-29
+---
+
+# Sync Truck
+
+## POST `/v1/ems/truck/sync/{truck_id}`
+
+Register a truck as being synced to the latest from the device. When updating a truck record on a device based on the cloud data, send this HTTP request to let the backend know the record is in sync with the device.
+
+### Request
+
+```
+"Authorization": "Bearer <Token>"
+```
+
+| Path Parameters | |
+| ---- | ----- |
+| truck_id | The ID of the truck. |
+
+#### Body
+```
+{
+    "device_id": [string] UUID device id
+}
+```
+
+
+### Response `200`
+
+Truck record has been set as sync up for the device.
+
+#### Body
+```
+{
+    "device_id": [string] UUID device id
+}
+```
+
+### Response `201`
+
+Truck record has made a new tracking record of the sync up for the device.
+
+#### Body
+```
+{
+    "device_id": [string] UUID device id
+}
+```
+
+### Response `401`
+
+Unauthorizated for the user from bearer token.
+
+#### Body
+```
+{
+    "Error": "Unauthorized",
+    "message": [string] Authorization issue
+}
+```
+
+#### Messages
+
+- You are not authorized to access this resource
+> The token from Firebase is invalid
+- Authorization header is missing
+> There is no "Authorization" in the header request.
+- Invalid authorization header format
+> The "Authorization" header does not have "Bearer Token" format.
+
+
+### Response `404`
+
+The device ID or truck record could was not found.
+
+#### Body
+```
+{}
+```
+
+### Response `500`
+
+Internal error with the server.
+
+#### Body
+```
+{
+    "error": "Internal Server Error",
+    "message": "Internal Server Error"
+}
+```

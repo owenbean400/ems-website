@@ -1,58 +1,69 @@
 ---
-title: Get Rescues by ID
-path: /api_documentation/v1/ems/get-rescues.mdx
-date: 2025-02-15
+title: Get unsync rescue record
+path: /api_documentation/v1/ems/rescue/get-unsync-rescue.mdx
+date: 2025-03-29
 ---
 
-# Get Trucks
+# Get Unsync Rescue Records
 
-## GET `/v1/ems/rescue`
+## GET `/v1/ems/rescue/unsync/{device_id}`
 
-Gets a list of rescue through paging. Pagination allow for smaller set of data to be sent over through the api that helps prevent huge data transfer over the network.
+Gets all the rescue records that are out of sync for the device with the cloud.
 
 ### Request
 
-Headers
+#### Headers
 
 ```
 "Authorization": "Bearer <Token>"
 ```
 
+| Path Parameters | |
+| ---- | ----- |
+| device_id | The UUID of device. |
+
 | Query Parameters | |
 | ---- | ----- |
-| pageNumber | The page number of fetching truck records. Must be an integer greater than 0. Default value to first page. |
+| pageNumber | The page number of fetching unsync rescue records for device. Must be an integer greater than 0. Default value to first page. |
 | pageSize | The number of items in the list fetched from a page. Must be an integer between 1 and 20 inclusively. Default value is 5. |
 
 ### Response `200`
 
-The rescue has been successfully fetched.
-
 #### Body
-
 ```
 {
     "pageSize": [number] The page size of the content,
     "pageNumber": [number] The page number of the content,
     "content": [
         {
-            "id": [string] The ID of the record,
+            "rescue_id": [string] ID of rescue record,
+            "device_id": [string] UUID of device,
+            "action_state": [Action State Enum] The action the device should take on the rescue record,
             "call_date": [string] Call date time in ISO 8602,
             "enroute_date": [string] Enroute date time in ISO 8602,
             "scene_date": [string] Scene date time in ISO 8602,
-            "transportation": [string] Transportation date time in ISO 8602,
-            "destination_date" [string] Destination date time in ISO 8602,
+            "transportation_date": [string] Transportation date time in ISO 8602,
+            "destination_date": [string] Destination date time in ISO 8602,
             "mileage": [number] Amount of mileage with rescue,
             "notes": [string] Extra notes to the rescue,
-            "truck_id": [string | NULL] The ID of truck record.
+            "truck_id": [string | NULL] The ID of truck record
         },
         ...
     ]
 }
 ```
 
+#### Action State Enum
+
+`UPDATE` - Rescue record needs to update on device
+
+`DELETE` - Rescue record needs to delete on device
+
+`ADD` - Rescue record needs to add on device
+
 ### Response `400`
 
-There was an issue with the query parameters.
+There was an issue with the query or path parameters.
 
 #### Body
 ```
@@ -63,6 +74,8 @@ There was an issue with the query parameters.
 ```
 
 #### Messages
+- Must have device ID parameter
+> No device UUID was set in the path id parameter.
 - pageNumber must be an int that is greater than 0.
 > The pageNumber query was not a whole number that is greater than 0.
 - pageSize must be an int that is greater than 0 and less than or equal to 20.
@@ -70,7 +83,7 @@ There was an issue with the query parameters.
 
 ### Response `401`
 
-Authorization issue.
+Unauthorizated for the user from bearer token.
 
 #### Body
 ```
@@ -88,6 +101,15 @@ Authorization issue.
 > There is no "Authorization" in the header request.
 - Invalid authorization header format
 > The "Authorization" header does not have "Bearer Token" format.
+
+### Response `404`
+
+No device ID was found.
+
+#### Body
+```
+{}
+```
 
 ### Response `500`
 
