@@ -1,30 +1,30 @@
 ---
-title: Delete truck by ID
-path: /api_documentation/v1/ems/delete-truck.mdx
-date: 2025-02-15
+title: Delete User from Organization
+path: /api_documentation/v1/ems/organization/user/delete-user-org.mdx
+date: 2025-04-06
 ---
 
-# Delete Truck by ID
+# Delete User from Organization
 
-## DELETE `/v1/ems/truck/{id}`
+## DELETE `/v1/ems/organization/{org_id}/user/{user_id}`
 
-Delete a truck by the id. This is idempotent whether the record exist or not, but will provide detail if the record has existed through the response. The record will not be deleted if the rescue record is not owned by the user.
+Delete a user from organization.
 
 ### Request
 
 Headers
-
 ```
 "Authorization": "Bearer <Token>"
 ```
 
 | Path Parameters | |
-| ---- | ----- |
-| id | The ID of the truck. |
+| --------------- | - |
+| org_id | The organization ID |
+| invite_id | The Invite ID of record |
 
 ### Response `204`
 
-The truck record has been deleted.
+User has been deleted from organization.
 
 ### Response `401`
 
@@ -49,7 +49,7 @@ Authorization issue.
 
 ### Response `404`
 
-The truck record does not exist.
+The user does not exist in organization.
 
 ### Response `500`
 

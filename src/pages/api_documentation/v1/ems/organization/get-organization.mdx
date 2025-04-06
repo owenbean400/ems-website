@@ -1,0 +1,66 @@
+---
+title: Get organization
+path: /api_documentation/v1/ems/truck/get-organization.mdx
+date: 2025-04-05
+---
+
+# Get Organization
+
+## GET `/v1/ems/organization/{org_id}`
+
+Gets an organization
+
+### Request
+
+Headers
+
+```
+"Authorization": "Bearer <Token>"
+```
+
+| Path Parameters |   |
+| --------------- | - |
+| org_id | The organization ID |
+
+### Response `200`
+
+The organization has been successfully found and returned.
+
+#### Body
+
+```
+{
+    "id": [string] The organization ID,
+    "name": [string] The name of the organization,
+    "user_id": [string] The owner user ID
+}
+```
+
+### Respone `401`
+
+Authorization issue.
+
+#### Body
+```
+{
+    "Error": "Unauthorized",
+    "message": [string] Authorization issue
+}
+```
+
+#### Messages
+
+- You are not authorized to access this resource
+> The token from Firebase is invalid
+- Authorization header is missing
+> There is no "Authorization" in the header request.
+- Invalid authorization header format
+> The "Authorization" header does not have "Bearer Token" format.
+
+### Response `403`
+
+Forbidden to view due to permission within the organization.
+
+### Response `404`
+
+An organization was not found with the ID.

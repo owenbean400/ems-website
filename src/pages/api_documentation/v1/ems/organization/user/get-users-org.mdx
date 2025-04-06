@@ -1,0 +1,76 @@
+---
+title: Get Users in Organization
+path: /api_documentation/v1/ems/organization/user/get-users-org.mdx
+date: 2025-04-06
+---
+
+# Get All Users in Organization
+
+## GET `/v1/ems/organization/{org_id}/user`
+
+Fetch the users in the organization.
+
+### Request
+
+Headers
+```
+"Authorization": "Bearer <Token>"
+```
+
+| Path Parameters | |
+| --------------- | - |
+| org_id | The organization ID |
+
+| Query Parameters | |
+| --- | --- |
+| pageNumber | The page number of fetching truck records. Must be an integer greater than 0. Default value to first page. |
+| pageSize | The number of items in the list fetched from a page. Must be an integer between 1 and 20 inclusively. Default value is 5. |
+
+### Response `200`
+
+Fetched the users in organization.
+
+#### Body
+
+```
+{
+    "pageSize": [number] The page size of the content,
+    "pageNumber": [number] The page number of the content,
+    "content": [
+        {
+            "id": [string] The ID of record link user to organization,
+            "user_id" [string] The user ID,
+            "permission": [OWNER|ADMIN|BASIC|PENDING] The permission of the user in the organization 
+        },
+        ...
+    ]
+}
+```
+
+### Response `401`
+
+Authorization issue.
+
+#### Body
+```
+{
+    "Error": "Unauthorized",
+    "message": [string] Authorization issue
+}
+```
+
+### Response `403`
+
+Forbidden as only the owner or admin can view the users in the organization.
+
+### Response `500`
+
+Internal error with the server.
+
+#### Body
+```
+{
+    "error": "Internal Server Error",
+    "message": "Internal Server Error"
+}
+```

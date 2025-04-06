@@ -1,0 +1,88 @@
+---
+title: Create invite
+path: /api_documentation/v1/ems/organization/create-invite.mdx
+date: 2025-04-05
+---
+
+# Create Invite
+
+## POST `/v1/ems/organization/{org_id}/invite`
+
+Creates an invite code for users to join the organization.
+
+### Request
+
+Headers
+```
+"Authorization": "Bearer <Token>"
+```
+
+| Path Parameters | |
+| --------------- | - |
+| org_id | The organization ID |
+
+Body
+```
+{
+    "expiration_date: [string] The expiration of invite code date time as ISO 8602,
+    "require_approval": [bool] Whether users joining the organization shall wait for pending approval or automatically added
+}
+```
+
+### Response `201`
+
+The invite code has been created for the organization.
+
+#### Body
+
+```
+{
+    "id": [string] Invite record ID,
+    "invite_code": [string] The invite code for users to join organization. It is a 16 character randomly generated string,
+    "expiration_date: [string] The expiration of invite code date time as ISO 8602,
+    "require_approval": [bool] Whether users joining the organization shall wait for pending approval or automatically added,
+    "organization_id": [string] The organization ID
+}
+```
+
+### Response `401`
+
+Authorization issue.
+
+#### Body
+```
+{
+    "Error": "Unauthorized",
+    "message": [string] Authorization issue
+}
+```
+
+#### Messages
+
+- You are not authorized to access this resource
+> The token from Firebase is invalid
+- Authorization header is missing
+> There is no "Authorization" in the header request.
+- Invalid authorization header format
+> The "Authorization" header does not have "Bearer Token" format.
+
+
+### Response `403`
+
+Forbidden to create invite code as only owners can create invite.
+
+### Response `404`
+
+Organization was not found.
+
+### Response `500`
+
+Internal error with the server.
+
+#### Body
+```
+{
+    "error": "Internal Server Error",
+    "message": "Internal Server Error"
+}
+```

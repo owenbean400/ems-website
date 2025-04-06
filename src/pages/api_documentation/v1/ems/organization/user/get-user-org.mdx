@@ -1,0 +1,74 @@
+---
+title: Get User in Organization
+path: /api_documentation/v1/ems/organization/user/get-user-org.mdx
+date: 2025-04-05
+---
+
+# Get User in Organization
+
+## GET `/v1/ems/organization/{org_id}/user/{user_id}`
+
+Get a user in the organization.
+
+### Request
+
+Headers
+```
+"Authorization": "Bearer <Token>"
+```
+
+| Path Parameters | |
+| -- | -- |
+| org_id | The organization ID |
+| user_id | The user ID |
+
+### Reponse `200`
+
+The user was successfully fetched in the organization.
+
+#### Body
+
+```
+{
+    "id": [string] The ID of record link user to organization,
+    "user_id" [string] The user ID,
+    "permission": [OWNER|ADMIN|BASIC|PENDING] The permission of the user in the organization 
+}
+```
+
+### Response `401`
+
+Authorization issue.
+
+#### Body
+```
+{
+    "Error": "Unauthorized",
+    "message": [string] Authorization issue
+}
+```
+
+#### Messages
+
+- You are not authorized to access this resource
+> The token from Firebase is invalid
+- Authorization header is missing
+> There is no "Authorization" in the header request.
+- Invalid authorization header format
+> The "Authorization" header does not have "Bearer Token" format.
+
+### Response `403`
+
+Forbidden as only the owner or admin of the organization can view a user record in the organization.
+
+### Response `500`
+
+Internal error with the server.
+
+#### Body
+```
+{
+    "error": "Internal Server Error",
+    "message": "Internal Server Error"
+}
+```

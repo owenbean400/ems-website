@@ -1,0 +1,100 @@
+---
+title: Update user permissions
+path: /api_documentation/v1/ems/organization/user/update-user-permission.mdx
+date: 2025-04-06
+---
+
+# Update User Permission
+
+## PATCH `/v1/ems/organization/{org_id}/user/{user_id}`
+
+Updates permission of a user in the organization.
+
+### Request
+
+Headers
+```
+"Authorization": "Bearer <Token>"
+```
+
+| Path Parameters | |
+| --------------- | - |
+| org_id | The organization ID |
+| invite_id | The Invite ID of record |
+
+Body
+```
+{
+    "permission": [OWNER|ADMIN|BASIC|PENDING] The permission of the user in the organization 
+}
+```
+
+### Response `200`
+
+User permission has been updated.
+
+Body
+```
+{
+    "permission": [OWNER|ADMIN|BASIC|PENDING] The permission of the user in the organization
+}
+```
+
+### Response `400`
+
+The permission was not "OWNER", "ADMIN", "BASIC", nor "PENDING".
+
+#### Body
+```
+{
+    "error": "Bad Request",
+    "message": "Error updating database"
+}
+```
+
+### Response `401`
+
+Authorization issue.
+
+#### Body
+```
+{
+    "Error": "Unauthorized",
+    "message": [string] Authorization issue
+}
+```
+
+#### Messages
+
+- You are not authorized to access this resource
+> The token from Firebase is invalid
+- Authorization header is missing
+> There is no "Authorization" in the header request.
+- Invalid authorization header format
+> The "Authorization" header does not have "Bearer Token" format.
+
+### Response `403`
+
+Forbidden as the user can only set the permission to another user at the one less highest access level.
+
+### Response `404`
+
+User does not work.
+
+### Response `500`
+
+Internal error with the server.
+
+#### Body
+```
+{
+    "error": "Internal Server Error",
+    "message": "Internal Server Error"
+}
+```
+
+
+
+
+
+

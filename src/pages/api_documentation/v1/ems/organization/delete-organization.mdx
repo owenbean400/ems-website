@@ -1,14 +1,14 @@
 ---
-title: Delete truck by ID
-path: /api_documentation/v1/ems/delete-truck.mdx
-date: 2025-02-15
+title: Delete organization
+path: /api_documentation/v1/ems/organization/delete-organization.mdx
+date: 2025-04-05
 ---
 
-# Delete Truck by ID
+# Delete Organization
 
-## DELETE `/v1/ems/truck/{id}`
+## DELETE `/v1/ems/organization/{org_id}`
 
-Delete a truck by the id. This is idempotent whether the record exist or not, but will provide detail if the record has existed through the response. The record will not be deleted if the rescue record is not owned by the user.
+Deletes the organization. This is idempotent whether the record exist or not as long as the record exist is the owner making the call.
 
 ### Request
 
@@ -19,12 +19,12 @@ Headers
 ```
 
 | Path Parameters | |
-| ---- | ----- |
-| id | The ID of the truck. |
+| --------------- | - |
+| org_id | The organization ID |
 
 ### Response `204`
 
-The truck record has been deleted.
+The organization has been deleted.
 
 ### Response `401`
 
@@ -49,7 +49,7 @@ Authorization issue.
 
 ### Response `404`
 
-The truck record does not exist.
+The organization does not exist.
 
 ### Response `500`
 

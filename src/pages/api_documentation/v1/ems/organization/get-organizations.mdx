@@ -1,14 +1,14 @@
 ---
-title: Get Rescues
-path: /api_documentation/v1/ems/get-rescues.mdx
-date: 2025-02-15
+title: Get organizations by ID
+path: /api_documentation/v1/ems/organization/get-organizations.mdx
+date: 2025-04-05
 ---
 
-# Get Rescues
+# Get Organizations
 
-## GET `/v1/ems/rescue`
+## GET `/v1/ems/organization`
 
-Gets a list of rescue through paging. Pagination allow for smaller set of data to be sent over through the api that helps prevent huge data transfer over the network.
+Gets a list of organization the user belongs to.
 
 ### Request
 
@@ -25,26 +25,19 @@ Headers
 
 ### Response `200`
 
-The rescue has been successfully fetched.
+The organizations has been successfully fetched.
 
 #### Body
-
 ```
 {
     "pageSize": [number] The page size of the content,
     "pageNumber": [number] The page number of the content,
     "content": [
         {
-            "id": [string] The ID of the record,
-            "call_date": [string] Call date time in ISO 8602,
-            "enroute_date": [string] Enroute date time in ISO 8602,
-            "scene_date": [string] Scene date time in ISO 8602,
-            "transportation": [string] Transportation date time in ISO 8602,
-            "destination_date" [string] Destination date time in ISO 8602,
-            "mileage": [number] Amount of mileage with rescue,
-            "notes": [string] Extra notes to the rescue,
-            "truck_id": [string | NULL] The ID of truck record.
-        },
+            "id": [string] The organization ID,
+            "name": [string] The name of the organization,
+            "user_id": [string] The owner user ID
+        }
         ...
     ]
 }
@@ -90,6 +83,7 @@ Authorization issue.
 > The "Authorization" header does not have "Bearer Token" format.
 
 ### Response `500`
+
 
 Internal error with the server.
 

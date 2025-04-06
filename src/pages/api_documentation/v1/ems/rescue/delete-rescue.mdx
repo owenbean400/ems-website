@@ -22,17 +22,9 @@ Headers
 | ---- | ----- |
 | id | The ID of the rescue. |
 
-### Response `200`
+### Response `204`
 
-The rescue record does not exist. 
-
-#### Body
-
-```
-{
-    "deleted": [boolean] Record was deleted,
-}
-```
+The rescue record has been deleted.
 
 ### Response `401`
 
@@ -54,6 +46,10 @@ Authorization issue.
 > There is no "Authorization" in the header request.
 - Invalid authorization header format
 > The "Authorization" header does not have "Bearer Token" format.
+
+### Response `404`
+
+The rescue record does not exist.
 
 ### Response `500`
 

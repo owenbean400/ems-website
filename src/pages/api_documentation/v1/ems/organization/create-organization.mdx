@@ -1,14 +1,14 @@
 ---
-title: Delete truck by ID
-path: /api_documentation/v1/ems/delete-truck.mdx
-date: 2025-02-15
+title: Create an Organization
+path: /api_documentation/v1/ems/organization/create-organization.mdx
+date: 2025-04-05
 ---
 
-# Delete Truck by ID
+# Create Organization
 
-## DELETE `/v1/ems/truck/{id}`
+## POST `/v1/ems/organization`
 
-Delete a truck by the id. This is idempotent whether the record exist or not, but will provide detail if the record has existed through the response. The record will not be deleted if the rescue record is not owned by the user.
+Create an organization for organizing groups of users
 
 ### Request
 
@@ -18,13 +18,26 @@ Headers
 "Authorization": "Bearer <Token>"
 ```
 
-| Path Parameters | |
-| ---- | ----- |
-| id | The ID of the truck. |
+Body
+```
+{
+    "name": [string] name of organization,
+}
+```
 
-### Response `204`
+### Response `201`
 
-The truck record has been deleted.
+Organization has been created.
+
+### Body
+
+```
+{
+    "id": [string] ID of organization,
+    "name": [string] name of organization,
+    "user_id": [string] The owner user ID of the organization
+}
+```
 
 ### Response `401`
 
@@ -46,10 +59,6 @@ Authorization issue.
 > There is no "Authorization" in the header request.
 - Invalid authorization header format
 > The "Authorization" header does not have "Bearer Token" format.
-
-### Response `404`
-
-The truck record does not exist.
 
 ### Response `500`
 

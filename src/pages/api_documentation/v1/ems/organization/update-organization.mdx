@@ -1,14 +1,14 @@
 ---
-title: Delete truck by ID
-path: /api_documentation/v1/ems/delete-truck.mdx
-date: 2025-02-15
+title: Update organization
+path: /api_documentation/v1/ems/organization/update-organization.mdx
+date: 2025-04-05
 ---
 
-# Delete Truck by ID
+# Update Organization
 
-## DELETE `/v1/ems/truck/{id}`
+## PATCH `/v1/ems/organization/{org_id}`
 
-Delete a truck by the id. This is idempotent whether the record exist or not, but will provide detail if the record has existed through the response. The record will not be deleted if the rescue record is not owned by the user.
+Updates organization by the owner. Can update either name, owner of organization, or both.
 
 ### Request
 
@@ -19,12 +19,20 @@ Headers
 ```
 
 | Path Parameters | |
-| ---- | ----- |
-| id | The ID of the truck. |
+| --------------- | - |
+| org_id | The Organization ID |
 
-### Response `204`
+Body
+```
+{
+    "name": [string] (Optional) The name of organization to update to,
+    "user_id": [number] (Optional) The new owner ID to update to
+}
+```
 
-The truck record has been deleted.
+### Response `200`
+
+Update has been completed.
 
 ### Response `401`
 
@@ -47,13 +55,9 @@ Authorization issue.
 - Invalid authorization header format
 > The "Authorization" header does not have "Bearer Token" format.
 
-### Response `404`
-
-The truck record does not exist.
-
 ### Response `500`
 
-Internal error with the server.
+Internal error with the server. This includes issues with the data for updating the record.
 
 #### Body
 ```
