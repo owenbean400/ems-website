@@ -37,13 +37,15 @@ const R1_1_15 = () => {
           <ul>
              <li>Allow sharing of single record as CSV file.</li>
              <li>Allow for hiding rescue records when viewing in card layout of history.</li>
-             <li>Added delete option when on edit screen of a rescue.</li>
+             <li>Move single delete record button to the rescue edit screen.</li>
+             <li>Card layout edit button changed to edit on tap of edit card.</li>
              <li>Color change to top navigation of history to primary blue color.</li>
+             <li>Top bar navigation icons include label under icon.</li>
              <li>Search Bar of filter notes changes</li>
              <ul>
-              <li>Hiding of search bar will update rescue record history with no notes filtering</li>
-              <li>Search bar icon update with X for when the user wants to close searching of rescue records</li>
-              <li>More spacing added between search icon and search text</li>
+              <li>Hiding of search bar will update rescue record history with no notes filtering.</li>
+              <li>Search bar icon update with X for when the user wants to close searching of rescue records.</li>
+              <li>More spacing added between search icon and search text.</li>
              </ul>
           </ul>
           <li>Code Maintenance</li>
