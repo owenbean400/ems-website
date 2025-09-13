@@ -36,6 +36,7 @@ const R1_1_15 = () => {
           <li>History UI Refresh</li>
           <ul>
              <li>Allow sharing of single record as CSV file.</li>
+             <li>CSV file creation of all records will filter on the date set in history screen.</li>
              <li>Allow for hiding rescue records when viewing in card layout of history.</li>
              <li>Move single delete record button to the rescue edit screen.</li>
              <li>Card layout edit button changed to edit on tap of edit card.</li>
