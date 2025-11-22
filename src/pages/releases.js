@@ -23,6 +23,12 @@ const R1_01 = () => {
 
   const releases = [
     {
+      release: "1.1.16",
+      description: "Truck button color for dark mode, fixed Android CSV sharing and keyboard overlay bugs, and completed overall Flutter maintenance.",
+      date: "12/06/2025",
+      link: "/releases/1-1-16"
+    },
+    {
       release: "1.1.15",
       description: "History UI Updates and iOS/Android maintenance.",
       date: "09/15/2025",
