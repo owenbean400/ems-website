@@ -23,6 +23,12 @@ const R1_01 = () => {
 
   const releases = [
     {
+      release: "1.1.18",
+      description: "Updates for iOS 26, including library upgrades.",
+      date: "02/01/2025",
+      link: "/releases/1-1-18"
+    },
+    {
       release: "1.1.17",
       description: "App start up performance improvements with loading screen.",
       date: "01/25/2025",
